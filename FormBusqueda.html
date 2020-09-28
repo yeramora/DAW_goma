@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <script src="https://kit.fontawesome.com/6b4ca2c1fd.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <title>Formulario de Busqueda</title>
+  </head>
+  <body>
+    <header>
+      <a href="index.html"><img src="logo.png" alt="icono" width="100" height="100"></a> 
+      <p>Memories</p>
+      <p>
+        <a href="FormBusqueda.html"><i class="fa fa-search" aria-hidden="true"></i></a>
+        <a href="index.html"><i class="fas fa-sign-out-alt" aria-hidden="true"></i></a>
+      </p>
+    </header>
+    <form>
+      <fieldset>
+        <legend>Formulario de Busqueda</legend>
+        <p><label for="titulo">Titulo:</label >
+        <input type="text" id="titulo" name="titulo"></p>
+
+        <p><label for="paisprod">Pais:</label>
+        <input type="text" id="paisprod" name="paisprod"></p>
+        
+        <p><label for="fechprod">Fecha:</label>
+        <input type="date" id="fechprod" name="fechprod" value="2018-07-22" min="1920-01-01"></p>
+        
+        <p><a href="ResBusqueda.html"><input type="button" id="buscar" name="Buscar" value="Buscar"></a>
+        <input type="reset" id="borrar" name="Borrar"></p>
+        
+      </fieldset>
+    </form>
+    <footer>
+      <h3><a href="acerca.html">Acerca</a></h3>
+      <p>Copyright &copy; DAW <time datetime="2020">2020-2021</time></p>
+    </footer>
+  </body>
+</html>
