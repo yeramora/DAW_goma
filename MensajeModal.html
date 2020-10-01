@@ -9,24 +9,27 @@
     <header>
       <a href="index.html"><img src="logo.png" alt="icono" width="100" height="100"></a> 
       <p>Memories</p>
-      <p>
-        <a href="FormBusqueda.html"><i class="fa fa-search" aria-hidden="true"></i></a>
-        <a href="index.html"><i class="fas fa-sign-out-alt" aria-hidden="true"></i></a>
-      </p>
+      <aside>
+        <a href="FormBusqueda.html"><i class="fa fa-search" aria-hidden="true">Buscar</i></a>
+        <a href="index.html"><i class="fas fa-sign-out-alt" aria-hidden="true">Log out</i></a>
+      </aside>
     </header>
-    <section>
-        <p>
+    <main>
+      <article>
+        <section>
             <h2>Tienes que estar logeado para acceder a esta informacion</h2>
-            <input type="text" value="username" placeholder="Usuario">
-            <input type="password" value="contraseña" placeholder="Contraseña">
-            <input type="submit">
-        </p>
-            <h2>¿Aun no estas registrado?</h2>
-            <a href="FormRegistro.html"> <input type="button" value="Registrate"> </a>
-        <p>
-
-        </p>
-    </section>
+            <form action="/index_logged.html">
+                <label for="username">Usuario:</label><input type="text" value="username" placeholder="Usuario">
+                <label for="contraseña">Contraseña:</label><input type="password" value="contraseña" placeholder="Contraseña">
+                <input type="submit" value="Submit">
+            </form>
+        </section>
+        <section>
+          <h2>¿Aun no estas registrado?</h2>
+            <a href="FormRegistro.html"> <p>Registrate</p> </a>
+        </section>
+      </article>
+    </main>   
     <footer>
         <h3><a href="acerca.html">Acerca</a></h3>
         <p>Copyright &copy; DAW <time datetime="2020">2020-2021</time></p>
