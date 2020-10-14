@@ -16,22 +16,69 @@
       </aside>
     </header>
     <main>
-      <form>
+      <form action="SolicitarAlbumsend.html">
         <fieldset>
           <legend>Solicitar Album</legend>
           <p><label for="tituloa">Titulo del album:</label >
-          <input type="text" id="tituloa" name="tituloa"></p>
+          <input type="text" id="tituloa" name="tituloa" required></p>
   
           <p><label for="texta">Texto Adicional:</label>
           <input type="text" id="texta" name="texta"></p>
+
+          <p><label for="email">Correo Electronico:</label>
+          <input type="text" id="email" name="email" required></p>
+
+          <p><label for="direccione">Direccion de Entrega:</label>
+          <label for="calle">Calle:</label>
+          <input type="text" id="calle" name="calle" required>
+          <label for="numberdirect">Numero:</label>
+          <input type="number" id="numberdirect" name="numberdirect" required>
+          <label for="pisodirect">Piso:</label>
+          <input type="number" id="pisodirect" name="pisodirect" required>
+          <label for="puertadirect">Puerta:</label>
+          <input type="text" id="puertadirect" name="puertadirect" required>
+          <label for="postalcode">Codigo Postal:</label>
+          <input type="number" id="postalcode" name="postalcode" required>
+          <label for="localidad">Localidad:</label>
+          <input type="text" id="localidad" name="localidad" required>
+          <label for="privincia">Provincia:</label>
+          <input type="text" id="provincia" name="provincia" required>
+          <label for="paisd">Pais:</label>
+          <input type="text" id="paisd" name="paisd" required></p>
+
+          <p><label for="telf">Telefono:</label>
+          <input type="tel" id="telf" name="telf"></p>
           
           <p><label for="colora">Color de portada:</label>
-          <input type="color" id="colora" name="colora"></p>
+          <input type="color" id="colora" name="colora" required></p>
 
-          <p><label for="numa">Numerod de copias:</label>
-            <input type="number" id="numa" name="numa" value="1" min="1"></p>
+          <p><label for="numa">Numero de copias:</label>
+          <input type="number" id="numa" name="numa" value="1" min="1" required></p>
+
+          <p><label for="reso">Resolucion Fotos</label>
+          <input type="number" id="reso" name="reso" value="150" min="150" maxn="150" step="150" required></p>
+
+          <p><label for="album">Solicitar album:</label>
+            <select id="album" name="album" required>
+              <option value="">--</option>
+              <option value="opt1">album1</option>
+              <option value="opt2">album2</option>
+              <option value="opt3">album3</option>
+            </select>
+          </p>
+
+          <p><label for="fechrec">Fecha de entrega:</label>
+          <input type="date" id="fechrec" name="fechrec"></p>
+
+          <p><label for="coloralbum">Color o B/N</label>
+            <select id="coloralbum" name="coloralbum" required>
+              <option value="">--</option>
+              <option value="blackwhite">B/N</option>
+              <option value="colorful">Color</option>
+            </select>
+          </p>
           
-          <p><button value="Solicitar Album"></button><a href="SolicitarAlbumsend.html"></a>
+          <p><input type="submit">  <!--<a href="SolicitarAlbumsend.html"></a>-->
           <input type="reset" id="borrar" name="Borrar"></p>
           
         </fieldset>
