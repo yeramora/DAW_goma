@@ -2,8 +2,8 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="o.css" title="Estilo básico" media="screen">  
-    <script src="https://kit.fontawesome.com/6b4ca2c1fd.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="cssYera.css" title="Estilo básico" media="screen">  
+    <link rel="stylesheet" href="cssAlex.css" title="Estilo básico" media="screen">     <script src="https://kit.fontawesome.com/6b4ca2c1fd.js" crossorigin="anonymous"></script>
     <title>Memories LOGGED</title>
   </head>
   <body>
@@ -16,13 +16,11 @@
       </aside>
     </header>
     <main>
-      <article>
+      <article id="formregistro">
         <h2>Solicitar Album</h2>
       <form action="SolicitarAlbumsend.html">
         <fieldset>
           <p>Rellene las opciones de este formulario para continuar con su compra</p>
-          <p><label for="named">Nombre y Apellidos:</label>
-          <input type="text" id="named" name="named" maxlength="200" required></p>
           <table>
             <caption><strong>Informacion de Tarifas de precio</strong></caption>
             <tr>
@@ -85,6 +83,9 @@
               <td> </td>
             </tr>
           </table>
+          <p><label for="named">Nombre y Apellidos:</label>
+          <input type="text" id="named" name="named" maxlength="200" required></p>
+          
           <p><label for="tituloa">Titulo del album*:</label>
 
           <input type="text" id="tituloa" name="tituloa" required></p>

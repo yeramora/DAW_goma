@@ -4,6 +4,7 @@
     --Rmedio: #FF8E72;
     --Roscuro: #ED6A5E;
     --Verde: #4CE0B3;
+    --Azul: #1cd0e7;
 
 }
 
@@ -13,7 +14,7 @@
 }
 
 body {
- background-color: #4CE0B3;
+ background-color: #1cd0e7;
  margin:0em;
 }
 
@@ -22,7 +23,7 @@ header {
     border-radius: 2em;
     display:flex;
     flex-direction: row;
-    border:solid 1em #ED6A5E;
+    border:solid 0.4em #ED6A5E;
     margin:auto;
 }
 header>a>img{

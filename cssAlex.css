@@ -1,0 +1,71 @@
+:root {
+
+    --Rclaro: #FFAF87;
+    --Rmedio: #FF8E72;
+    --Roscuro: #ED6A5E;
+    --Verde: #4CE0B3;
+    --Azul: #1cd0e7;
+
+}
+
+
+#modalito{
+    background-color: #FFAF87;
+    border: solid 0.4em #ED6A5E;
+    text-align: center;
+    margin: 4em;
+    padding: 2em;
+}
+
+#formregistro>form>fieldset{
+    border: solid 3px black;
+    display: block;
+}
+
+
+#formregistro{
+    background-color: #FFAF87;
+    border: solid 0.4em #ED6A5E;
+    margin: 4em;
+    padding: 2em;
+    
+
+}
+
+#formregistro>form>fieldset>table>caption{
+    border: solid 2px black;
+    border-bottom: 0px;
+    table-layout: fixed;
+}
+
+#formregistro>form>fieldset>table{
+    border: solid 2px black;
+    table-layout: fixed;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#formregistro>form>fieldset>p{
+    font-weight: bold;
+    display: block;
+}
+
+#formregistro>form>fieldset>section{
+    border-top: solid 2px black;
+    border-bottom: solid 2px black;
+    padding: 2em;
+    padding-top: 0em;
+    display: block;
+}
+
+#albuminfo{
+    background-color: #FFAF87;
+    border: solid 0.4em #ED6A5E;
+    margin: 4em;
+    padding: 2em;
+    text-align: center;
+}
+
+main{
+    text-align: center;
+}
