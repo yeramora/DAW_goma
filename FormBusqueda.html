@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <script src="https://kit.fontawesome.com/6b4ca2c1fd.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="cssYera.css" title="Estilo básico" media="screen">  
+    <link rel="stylesheet" href="cssAlex.css" title="Estilo básico" media="screen"> 
     <meta charset="UTF-8">
     <title>Formulario de Busqueda</title>
   </head>
@@ -15,22 +16,18 @@
       </aside>
     </header>
     <main>
-      <form action="/ResBusqueda.html">
-        <fieldset>
-          <legend>Formulario de Busqueda</legend>
-          <p><label for="titulo">Titulo:</label >
-          <input type="text" id="titulo" name="titulo"></p>
+      <form action="/ResBusqueda.html" class="formyera">
+          <p><label for="titulo" class="invisible">Titulo</label >
+          <input type="text" id="titulo" name="titulo" placeholder="titulo"></p>
   
-          <p><label for="paisprod">Pais:</label>
-          <input type="text" id="paisprod" name="paisprod"></p>
+          <p><label for="paisprod"  class="invisible">Pais</label>
+          <input type="text" id="paisprod" name="paisprod" placeholder="pais"></p>
           
-          <p><label for="fechprod">Fecha:</label>
+          <p><label for="fechprod">Fecha</label>
           <input type="date" id="fechprod" name="fechprod" value="2018-07-22" min="1920-01-01"></p>
           
-          <p><input type="submit" id="buscar" name="Buscar" value="Buscar">
+          <p class="enviar"><input type="submit" id="buscar" name="Buscar" value="Buscar">
           <input type="reset" id="borrar" name="Borrar"></p>
-          
-        </fieldset>
       </form>
     </main>
     <footer>
