@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="cssYera.css" title="Estilo básico" media="screen">  
-    <link rel="stylesheet" href="cssAlex.css" title="Estilo básico" media="screen">     <script src="https://kit.fontawesome.com/6b4ca2c1fd.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="cssAlex.css" title="Estilo básico" media="screen">
+    <script src="https://kit.fontawesome.com/6b4ca2c1fd.js" crossorigin="anonymous"></script>
     <title>Memories LOGGED</title>
   </head>
   <body>
@@ -16,10 +17,10 @@
       </aside>
     </header>
     <main>
-      <article id="formregistro">
-        <h2>Solicitar Album</h2>
-      <form action="SolicitarAlbumsend.html">
-        <fieldset>
+      <article>
+        <h1 class="invisible">Solicitar Album</h1>
+      <form action="SolicitarAlbumsend.html" class="formyera">
+        <h1>Solicitar Album</h1>
           <p>Rellene las opciones de este formulario para continuar con su compra</p>
           <table>
             <caption><strong>Informacion de Tarifas de precio</strong></caption>
@@ -42,7 +43,7 @@
             </tr>
             
             <tr>
-              <td>Adicional blanda</td>
+              <td>Adicional</td>
               <td>0,49</td>
               <td>300 DPI</td>
               <td>15</td>
@@ -50,8 +51,8 @@
               <td>10</td>
             </tr>
             <tr>
-              <td>Adicional dura</td>
-              <td>0,69</td>
+              <td></td>
+              <td></td>
               <td>450 DPI</td>
               <td>20</td>
               <td> </td>
@@ -83,45 +84,45 @@
               <td> </td>
             </tr>
           </table>
-          <p><label for="named">Nombre y Apellidos:</label>
-          <input type="text" id="named" name="named" maxlength="200" required></p>
+          <p><label for="named" class="invisible">Nombre y Apellidos:</label>
+          <input type="text" id="named" name="named" maxlength="200" required placeholder="Nombre y Apellidos*"></p>
           
-          <p><label for="tituloa">Titulo del album*:</label>
+          <p><label for="tituloa" class="invisible">Titulo del album*:</label>
 
-          <input type="text" id="tituloa" name="tituloa" required></p>
+          <input type="text" id="tituloa" name="tituloa" required placeholder="Titulo Album*"></p>
   
-          <p><label for="texta">Texto Adicional:</label>
-          <input type="text" id="texta" name="texta"></p>
+          <p><label for="texta" class="invisible">Texto Adicional:</label>
+          <input type="text" id="texta" name="texta" placeholder="Texto Adicional*"></p>
 
-          <p><label for="email">Correo Electronico*:</label>
-          <input type="text" id="email" name="email" required></p>
+          <p><label for="email" class="invisible">Correo Electronico*:</label>
+          <input type="text" id="email" name="email" required placeholder="Email*"></p>
           <section>
             <h3>Direccion de Entrega:</h3>
-          <label for="calle">Calle*:</label>
-          <input type="text" id="calle" name="calle" required>
-          <label for="numberdirect">Numero*:</label>
-          <input type="number" id="numberdirect" name="numberdirect" required>
-          <label for="pisodirect">Piso*:</label>
-          <input type="number" id="pisodirect" name="pisodirect" required>
-          <label for="puertadirect">Puerta*:</label>
-          <input type="text" id="puertadirect" name="puertadirect" required>
-          <label for="postalcode">Codigo Postal*:</label>
-          <input type="number" id="postalcode" name="postalcode" required>
-          <label for="localidad">Localidad*:</label>
-          <input type="text" id="localidad" name="localidad" required>
-          <label for="provincia">Provincia*:</label>
-          <input type="text" id="provincia" name="provincia" required>
-          <label for="paisd">Pais*:</label>
-          <input type="text" id="paisd" name="paisd" required>
+          <label for="calle" class="invisible">Calle*:</label>
+          <input type="text" id="calle" name="calle" required placeholder="Calle*">
+          <label for="numberdirect" class="invisible">Numero*:</label>
+          <input type="number" id="numberdirect" name="numberdirect" required placeholder="Numero*">
+          <label for="pisodirect" class="invisible">Piso*:</label>
+          <input type="number" id="pisodirect" name="pisodirect" required placeholder="Piso*">
+          <label for="puertadirect" class="invisible">Puerta*:</label>
+          <input type="text" id="puertadirect" name="puertadirect" required placeholder="Puerta*">
+          <label for="postalcode" class="invisible">Codigo Postal*:</label>
+          <label for="paisd" class="invisible">Pais*:</label>
+          <input type="text" id="paisd" name="paisd" required placeholder="Pais*">
+          <input type="number" id="postalcode" name="postalcode" required placeholder="Codigo Postal*">
+          <label for="localidad" class="invisible">Localidad*:</label>
+          <input type="text" id="localidad" name="localidad" required placeholder="Localidad*">
+          <label for="provincia" class="invisible">Provincia*:</label>
+          <input type="text" id="provincia" name="provincia" required placeholder="Provincia*">
         </section>
-          <p><label for="telf">Telefono*:</label>
-          <input type="tel" id="telf" name="telf"></p>
+          <p><label for="telf" class="invisible">Telefono*:</label>
+          <input type="tel" id="telf" name="telf" placeholder="Telefono"></p>
           
           <p><label for="colora">Color de portada*:</label>
           <input type="color" id="colora" name="colora"></p>
 
           <p><label for="numa">Numero de copias*:</label>
-          <input type="number" id="numa" name="numa" value="1" min="1" required></p>
+          <input type="number" id="numa" name="numa" value="1" min="1" required ></p>
 
           <p><label for="reso">Resolucion Fotos:*</label>
           <input type="number" id="reso" name="reso" value="150" min="150" max="900" step="150" required></p>
@@ -146,10 +147,8 @@
             </select>
           </p>
           
-          <p><input type="submit">  <!--<a href="SolicitarAlbumsend.html"></a>-->
-          <input type="reset" id="borrar" name="Borrar"></p>
-          
-        </fieldset>
+          <p class="enviar"><input type="submit" id="enviar" name="enviar">
+            <input type="reset" id="borrar" name="Borrar"></p>
       </form> 
     </article>
     </main>

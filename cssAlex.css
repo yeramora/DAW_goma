@@ -32,13 +32,13 @@
 
 }
 
-#formregistro>form>fieldset>table>caption{
+.formyera>table>caption{
     border: solid 2px black;
     border-bottom: 0px;
     table-layout: fixed;
 }
 
-#formregistro>form>fieldset>table{
+.formyera>table{
     border: solid 2px black;
     table-layout: fixed;
     margin-left: auto;
@@ -68,4 +68,14 @@
 
 main{
     text-align: center;
+}
+#colora{
+    padding: initial;
+}
+
+#albumsend>p{
+    color:black;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size:1.2em;
 }
