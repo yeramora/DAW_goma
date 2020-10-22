@@ -118,8 +118,8 @@ display:block;
 
 #artfotos>section>a>img {
 clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
-width:350;
-height: 600;
+width:350px;
+height: 600px;
 }
 /* #artfotos>section>a>img:hover{
   width:110%;
