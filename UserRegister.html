@@ -16,24 +16,27 @@
         <a href="UserRegister.html"><i class="fas fa-sign-out-alt" aria-hidden="true">Mi perfil</i></a>
       </aside>
     </header>
-    <main>
-      <article>
-        <h1 class="desaparece">h1 de article (esto desaparecera con css)</h1>
+    <main id="mainuser">
+      <article id="infogeneral">
+        <h1 class="invisible">Infogeneral</h1>
           <img src="img.png" alt="icono" width="300" height="300">
-          <h1>Nombreusuario</h1>
+          <section>
+            <h1>Nombreusuario</h1>
           <p>Info usuario lorem ipsum</p>
           <p>Info usuario lorem ipsum</p>
           <p>Info usuario lorem ipsum</p>
+          </section>
       </article>
-      <article>
-        <h1>article h1 (se elimina con css)</h1>
+      <article id="infouser">
+        <h1 class="invisible">Mi cuenta</h1>
         <button value="borrar cuenta">Mis albums</button>
         <button value="borrar cuenta">Mi perfil</button>
           <p>esta pagina solo muestra o los albums o el perfil,cambiando entre ambos al pulsarlos</p>
           <a href="crearalbum.html">Crear album</a>
           <a href="SolicitarAlbum.html">Solicitar album</a> 
-          <fieldset>
+          <fieldset class="row">
             <legend>Al pulsar en mis albums</legend>
+            <img src="img.png" alt="icono" width="300" height="300">
             <img src="img.png" alt="icono" width="300" height="300">
             <img src="img.png" alt="icono" width="300" height="300">
             <img src="img.png" alt="icono" width="300" height="300">
@@ -42,39 +45,40 @@
           </fieldset>
           <fieldset>
             <legend>Al pulsar en mi perfil</legend>
-            <form action="/index_logged.html">
-                <p><label for="usuario">Usuario:</label >
-                <input type="text" id="usuario" name="usuario" required></p>
+            <form action="/index_logged.html" class="formyera">
+              <h1>Mis datos</h1>
+                <p><label for="usuario" class="invisible">Usuario:</label >
+                <input type="text" id="usuario" name="usuario" required placeholder="Usuario"></p>
                 
-                <p><label for="contra">Contraseña:</label>
-                <input type="password" id="contra" name="contra" required></p>
+                <p><label for="contra" class="invisible">Contraseña:</label>
+                <input type="password" id="contra" name="contra" required placeholder="contraseña"></p>
                 
-                <p><label for="repcontraseña">Repetir Contraseña:</label>
-                <input type="text" id="repcontraseña" name="repcontraseña" required></p>
+                <p><label for="repcontraseña" class="invisible">Repetir Contraseña:</label>
+                <input type="text" id="repcontraseña" name="repcontraseña" required placeholder="repetir contraseña"></p>
                 
-                <p><label for="correo">Correo:</label>
-                <input type="text" id="correo" name="correo" required></p>
+                <p><label for="correo" class="invisible">Correo:</label>
+                <input type="text" id="correo" name="correo" required placeholder="correo"></p>
                 
-                <p><label for="sexo">Sexo:</label>
+                <p><label for="sexo" class="invisible">Sexo</label>
                 <select id="sexo" name="sexo" required>
-                  <option value="">--</option>
+                  <option value="">Sexo</option>
                   <option value="hombre">Hombre</option>
                   <option value="mujer">Mujer</option>
                   <option value="otro">Otro</option>
                 </select></p>
         
-                <p><label for="fechnac">Fecha de Nacimiento:</label>
-                <input type="date" id="fechnac" name="correo" value="2018-07-22" min="1920-01-01" required></p>
+                <p><label for="fechnac">Fecha de Nacimiento</label>
+                <input type="date" id="fechnac" name="correo" value="2018-07-22" min="1920-01-01" required placeholder="fecha"></p>
         
-                <p><label for="pais">Pais de residencia:</label>
-                <input type="text" id="pais" name="pais" required></p>
-                <p><label for="ciudad">Ciudad:</label>
-                <input type="text" id="ciudad" name="ciudad" required></p>
+                <p><label for="pais"  class="invisible">Pais de residencia:</label>
+                <input type="text" id="pais" name="pais" required placeholder="pais de residencia"></p>
+                <p><label for="ciudad"  class="invisible">Ciudad:</label>
+                <input type="text" id="ciudad" name="ciudad" required placeholder="ciudad"></p>
         
-                <p><label for="foto"></label>
+                <p><label for="foto">Foto perfil</label>
                 <input type="file" name="foto" id="foto" required></p>
                 
-                <p><input type="submit" id="enviar" name="enviar">
+                <p class="enviar"><input type="submit" id="enviar" name="enviar">
                 <input type="reset" id="borrar" name="Borrar"></p>
             </form>
             <p><button value="borrar cuenta">Borrar cuenta</button><a href="SolicitarAlbumsend.html"></a></p>

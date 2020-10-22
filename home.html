@@ -3,32 +3,35 @@
   <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="cssYera.css" title="Estilo básico" media="screen">  
-    <link rel="stylesheet" href="cssAlex.css" title="Estilo básico" media="screen"> 
+    <link rel="stylesheet" href="cssAlex.css" title="Estilo básico" media="screen">  
     <script src="https://kit.fontawesome.com/6b4ca2c1fd.js" crossorigin="anonymous"></script>
     <title>Memories</title>
   </head>
   <body>
       <header>
         <a href="index.html"><img src="logo.png" alt="icono" width="100" height="100"></a> 
-        <p>Memories (no loggeado)</p>
+        <p>Memories</p>
         <aside>
           <a href="MensajeLogin.html"><i class="fas fa-sign-in-alt" aria-hidden="true">Login</i></a>
           <a href="FormRegistro.html"><i class="fa fa-user-circle" aria-hidden="true">Registrarse</i></a>
         </aside>
       </header>
       <main>
-        <article>
+        <article id="artfotos">
           <h1>Las ultimas fotos</h1>
-          <a href="MensajeModal.html"><img src="img.png" alt="icono" width="300" height="600"></a>
-          <a href="MensajeModal.html"><img src="img.png" alt="icono" width="300" height="600"></a>
-          <a href="MensajeModal.html"><img src="img.png" alt="icono" width="300" height="600"></a>
-          <a href="MensajeModal.html"><img src="img.png" alt="icono" width="300" height="600"></a>
-          <a href="MensajeModal.html"><img src="img.png" alt="icono" width="300" height="600"></a>
+          <section>
+            <h2 class="invisible">section</h2>
+          <a href="MensajeModal.html"><img class="diagonal" src="img.png" alt="icono" width="400" height="600"></a>
+          <a href="MensajeModal.html"><img class="diagonal" src="img.png" alt="icono" width="300" height="600"></a>
+          <a href="MensajeModal.html"><img class="diagonal" src="img.png" alt="icono" width="300" height="600"></a>
+          <a href="MensajeModal.html"><img class="diagonal" src="img.png" alt="icono" width="300" height="600"></a>
+          <a href="MensajeModal.html"><img class="diagonal" src="img.png" alt="icono" width="300" height="600"></a>
+          </section>
         </article>
-        <article>
+        <article id="busquedalogin">
           <h1>Busqueda</h1>
           <a href="ResBusqueda.html"><i class="fa fa-search" aria-hidden="true"></i></a>
-          <label for="busqueda">Busqueda</label>
+          <label for="busqueda" class="invisible">Busqueda</label>
           <input type="text" name="busqueda" id="busqueda" required>
         </article>
       </main>
