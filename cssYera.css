@@ -118,7 +118,7 @@ display:block;
 
 #artfotos>section>a>img {
 clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
-width:20%;
+width:19%;
 height: 600px;
 }
 /* #artfotos>section>a>img:hover{
@@ -157,12 +157,21 @@ height: 600px;
   width:20em;
   border-bottom:4px solid black;
 }
+.formyera>p>input:focus{
+  border-bottom:4px solid plum;
+  color:plum;
+  font-size: 1em;
+}
+.formyera>p>input:focus::placeholder{
+  color:plum;
+}
 .formyera>p>input::placeholder{
   color:black;
   font-weight: bold;
   text-transform: uppercase;
   font-size:1.2em;
 }
+
 .formyera>p>label{
   color:grey;
   font-weight: bold;
@@ -275,6 +284,17 @@ p>select{
 /* RESULTADO BUSQUEDA END */
 
 
-@media all and (min-width:960px){ /*3 ARTICULOS*/
-  
+@media all and (max-width:1080px){ /*3 ARTICULOS*/
+  header>p{
+    font-size:4em;
+  }
+}
+
+@media all and (max-width:780px){ /*3 ARTICULOS*/
+  header>p{
+    font-size:2em;
+  }
+  header>aside>a{
+    font-size:1.2em;
+  }
 }
