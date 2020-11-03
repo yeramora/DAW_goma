@@ -22,16 +22,16 @@
       </aside>
     </header>
     <main>
-      <form action="/index_logged.html" class="formyera">
+      <form name="registroform" action="/index_logged.html" class="formyera">
         <h1>Registro</h1>
           <p><label for="usuario" class="invisible">Usuario:</label >
-          <input type="text" id="usuario" name="usuario" required placeholder="Usuario"></p>
+          <input type="text" id="usuario" name="usuario" placeholder="Usuario" onkeypress="return (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122) || (event.charCode >= 48 && event.charCode <= 57)" />></p>
           
           <p><label for="contra" class="invisible">Contraseña:</label>
-          <input type="password" id="contra" name="contra" required placeholder="contraseña"></p>
+          <input type="password" id="contra" name="contra" required placeholder="contraseña" onkeypress="return (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122) || (event.charCode >= 48 && event.charCode <= 57)"> <span id = "message" style="color:red"> </span></p>
           
           <p><label for="repcontraseña" class="invisible">Repetir Contraseña:</label>
-          <input type="text" id="repcontraseña" name="repcontraseña" required placeholder="repetir contraseña"></p>
+          <input type="text" id="repcontraseña" name="repcontraseña" required placeholder="repetir contraseña"> <span id = "messageconx" style="color:red"> </span> <span id = "messagecon" style="color:green"> </span></p>
           
           <p><label for="correo" class="invisible">Correo:</label>
           <input type="text" id="correo" name="correo" required placeholder="correo"></p>
