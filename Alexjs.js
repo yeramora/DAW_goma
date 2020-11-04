@@ -1,3 +1,12 @@
+function validaformulario(){
+  validatename();
+  validateemail();
+  sexok();
+  verifyPassword();
+  matchPassword();
+}
+
+
 function validatename() {
     var erroruser = 0;
     var usercorrect = document.forms["registroform"]["usuario"].value;
@@ -5,10 +14,12 @@ function validatename() {
     if (usercorrect == "" || Character.isDigit(x.charAt(0)) || usercorrect.lenght() < 3 || usercorrect.lenght() > 15) {
       erroruser = 1;
       alert("Error! El nombre de Usuario es incorrecto!");
+      mensajeemergente("titulomensaje","cuerpomensaje hola texto");
     }
   }
 
-function validateemail(email){
+function validateemail(){
+  var email = document.forms["registroform"]["correo"].value;
     String[] parts = email.split("@");
     String mail1 = parts[0];
     String mail2 = parts[1];
