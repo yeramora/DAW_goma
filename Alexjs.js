@@ -1,4 +1,6 @@
-function validatename() {
+function validarForm(){
+
+  function validatename() {
     var erroruser = 0;
     var usercorrect = document.forms["registroform"]["usuario"].value;
 
@@ -9,7 +11,7 @@ function validatename() {
   }
 
 function validateemail(email){
-    String[] parts = email.split("@");
+    String[] parts = new email.split("@");
     String mail1 = parts[0];
     String mail2 = parts[1];
     if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(registroform.correo.value) && mail1.lenght() > 1 && mail1.lenght < 64 && mail2.lenght() > 1 && mail2.lenght() < 255){
@@ -30,24 +32,31 @@ return false;
 
 function verifyPassword() {  
     var pw = document.getElementById("contra").value;  
-    //check empty password field  
+    var passw=  /^[A-Z]\$/;
+    
     if(pw == "") {  
-       document.getElementById("message").innerHTML = "**Fill the password please!";  
+       document.getElementById("message").innerHTML = "**Introduzca una contraseña!";  
        return false;  
     }  
      
    //minimum password length validation  
     if(pw.length < 6) {  
-       document.getElementById("message").innerHTML = "**Password length must be atleast 6 characters";  
+       document.getElementById("message").innerHTML = "**La contraseña debe tener al menos 6 caracteres";  
        return false;  
     }  
     
   //maximum length of password validation  
     if(pw.length > 15) {  
-       document.getElementById("message").innerHTML = "**Password length must not exceed 15 characters";  
+       document.getElementById("message").innerHTML = "**La contraseña debe ser menor a 15 caracteres";  
        return false;  
     } else {  
        alert("Password is correct");  
+    }
+    if(pw.value.match(passw)){
+      return true;
+    }else{
+      document.getElementById("message").innerHTML = "**La contraseña contener 1 mayuscula por lo menos";  
+       return false;  
     }
   }  
 
@@ -63,4 +72,5 @@ function matchPassword() {
     {   
         document.getElementById("messagecon").innerHTML = "**Las contraseñas coinciden";
     }  
-}  
+} 
+}
