@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
+    <script src="Alexjs.js"></script>
+    <script src="codigoyera.js"></script>
     <link rel="stylesheet" href="cssYera.css" title="Estilo básico" media="screen">  
     <link rel="stylesheet" href="cssAlex.css" title="Estilo básico" media="screen">
     <link rel="stylesheet" href="cssModoNoche.css" title="Modo noche" media="screen">
@@ -22,10 +24,10 @@
       </aside>
     </header>
     <main>
-      <form name="registroform" action="/index_logged.html" class="formyera">
+      <form name="registroform" action="/index_logged.html" class="formyera"  onsubmit="return validaformulario()">
         <h1>Registro</h1>
-          <p><label for="usuario" class="invisible">Usuario:</label >
-          <input type="text" id="usuario" name="usuario" placeholder="Usuario" onkeypress="return (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122) || (event.charCode >= 48 && event.charCode <= 57)" />></p>
+          <p><label for="usuario" class="invisible">Usuario:</label>
+          <input type="text" id="usuario" name="usuario" placeholder="Usuario" onkeypress="return (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122) || (event.charCode >= 48 && event.charCode <= 57)" /></p>
           
           <p><label for="contra" class="invisible">Contraseña:</label>
           <input type="password" id="contra" name="contra" required placeholder="contraseña" onkeypress="return (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122) || (event.charCode >= 48 && event.charCode <= 57)"> <span id = "message" style="color:red"> </span></p>
@@ -34,7 +36,7 @@
           <input type="text" id="repcontraseña" name="repcontraseña" required placeholder="repetir contraseña"> <span id = "messageconx" style="color:red"> </span> <span id = "messagecon" style="color:green"> </span></p>
           
           <p><label for="correo" class="invisible">Correo:</label>
-          <input type="text" id="correo" name="correo" required placeholder="correo"></p>
+          <input type="email" id="correo" name="correo" required placeholder="correo"></p>
           
           <p><label for="sexo" class="invisible">Sexo</label>
           <select id="sexo" name="sexo" required>
