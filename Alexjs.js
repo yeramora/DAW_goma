@@ -1,96 +1,186 @@
-<<<<<<< HEAD
-function validarForm(){
-
-  function validatename() {
-=======
 function validaformulario(){
-  validatename();
-  validateemail();
-  sexok();
-  verifyPassword();
-  matchPassword();
+  var y = 0;
+  validatedate()
+  y=y+validatename();
+  console.log(y + ".1");
+  y=y+validateemail();
+  if(validateemail() == 1){
+    mensajeemergente("Email erroneo", "Introduzca un mail valido");
+  }
+  console.log(y+".2");
+  y=y+sexok();
+  console.log(y+".3");
+  y=y+verifyPassword();
+  console.log(y+".4");
+  y=y+matchPassword();
+  console.log(y+".5");
+  if(y!=0){
+    return false
+  }else{
+    return true;
+  }
 }
 
 
 function validatename() {
->>>>>>> master
     var erroruser = 0;
     var usercorrect = document.forms["registroform"]["usuario"].value;
 
-    if (usercorrect == "" || Character.isDigit(x.charAt(0)) || usercorrect.lenght() < 3 || usercorrect.lenght() > 15) {
+    if (usercorrect == "" || usercorrect.charAt(0) == "1" || usercorrect.charAt(0) == "2" || usercorrect.charAt(0) == "3" || usercorrect.charAt(0) == "4" || usercorrect.charAt(0) == "5" ||
+    usercorrect.charAt(0) == "6" || usercorrect.charAt(0) == "7" || usercorrect.charAt(0) == "8" || usercorrect.charAt(0) == "9" || usercorrect.charAt(0) == "0" || usercorrect.lenght < 3 || usercorrect.lenght > 15) {
       erroruser = 1;
-      alert("Error! El nombre de Usuario es incorrecto!");
-      mensajeemergente("titulomensaje","cuerpomensaje hola texto");
+      mensajeemergente("Nombre de Usuario Erroneo","Recuerda que le nombre de usuario no debe empezar por un numero y debe ser mayor a 3 caracteres y menor a 14");
+      return 1;
+    }else{
+      return 0;
     }
   }
 
-<<<<<<< HEAD
-function validateemail(email){
-    String[] parts = new email.split("@");
-=======
 function validateemail(){
-  var email = document.forms["registroform"]["correo"].value;
-    String[] parts = email.split("@");
->>>>>>> master
-    String mail1 = parts[0];
-    String mail2 = parts[1];
-    if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(registroform.correo.value) && mail1.lenght() > 1 && mail1.lenght < 64 && mail2.lenght() > 1 && mail2.lenght() < 255){
-        return (true)
+  var email = document.getElementById("correo").value;
+  var mail = email.split("@");
+
+  var puntos = 0;
+
+  
+
+  if(email.length > 254){
+    return 1;
+  }
+
+
+  if(mail.length != 2){
+    return 1;
+  }
+  if(mail[0].charAt(0) == '.'){
+    return 1;
+  }
+
+  if(mail[0].charAt(mail[0].length-1) == '.'){
+    return 1;
+  }
+
+  for(var n = 0; n < mail[0].length; n++){
+    if(mail[0].charAt(n) == "."){
+      puntos = puntos + 1;
+    }else{
+      puntos = 0;
     }
-    alert("You have entered an invalid email address!")
-    return (false)
+    if(puntos == 2){
+      return 1;
+    }
+  }
+
+
+    if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(email))
+    {
+      if(mail[0].length >= 1 && mail[0].length <= 64 && mail[1].length >= 1 && mail[1].length <= 255){
+        var dominios = mail[1].split(".");
+        var long = dominios.length;
+        for(var z = 0; z < long; z++){
+          if(dominios[z].length > 63){
+            return 1
+          }
+          if(dominios[z].charAt(0)=="-"){
+            return 1
+          }
+          if(dominios[z].charAt(dominios[z].length-1)=="-"){
+            return 1
+          }
+        }
+        return 0  
+      }else{
+        return 1
+      }
+    }else{
+      return 1;  
+    }
+   
     }
 
 
 function sexok() {
-    var sexocorrect = document.forms["registroform"]["sexo"].value;
-if (sexocorrect.value) {
-  return true;
+    var sexocorrect = x = document.getElementById("sexo").value;
+if (sexocorrect=="") {
+  mensajeemergente("Sexo no seleccionado", "Seleccione un sexo porfavor");
+  return 1;
+}else{
+  return 0;
 }
-return false;
 }
 
 function verifyPassword() {  
-    var pw = document.getElementById("contra").value;  
-    var passw=  /^[A-Z]\$/;
-    
+    var pw = document.getElementById("contra").value;
+
+    //check empty password field  
     if(pw == "") {  
-       document.getElementById("message").innerHTML = "**Introduzca una contraseña!";  
-       return false;  
+       document.getElementById("message").innerHTML = "**Rellene este campo";  
+       return 1;  
     }  
      
    //minimum password length validation  
     if(pw.length < 6) {  
-       document.getElementById("message").innerHTML = "**La contraseña debe tener al menos 6 caracteres";  
-       return false;  
+       document.getElementById("message").innerHTML = "**La contraseña debe tener mas de 6 caracteres";  
+       return 1;  
     }  
     
   //maximum length of password validation  
     if(pw.length > 15) {  
-       document.getElementById("message").innerHTML = "**La contraseña debe ser menor a 15 caracteres";  
-       return false;  
-    } else {  
-       alert("Password is correct");  
+      document.getElementById("message").innerHTML = "**La contraseña debe tener menos de 15 caracteres";  
+       
+       return 1;  
+
     }
-    if(pw.value.match(passw)){
-      return true;
-    }else{
-      document.getElementById("message").innerHTML = "**La contraseña contener 1 mayuscula por lo menos";  
-       return false;  
+
+    if(pw.search(/[a-z]/) < 0) {
+      document.getElementById("message").innerHTML = "**La contraseña debe tener al menos una minuscula";  
+       
+      return 1
     }
+    if(pw.search(/[A-Z]/) < 0) {
+      document.getElementById("message").innerHTML = "**La contraseña debe tener al menos una mayuscula";
+      return 1
+    }
+    if(pw.search(/[0-9]/) < 0) {
+      document.getElementById("message").innerHTML = "**La contraseña debe tener al menos un numero";
+      return 1
+    }
+    
+    return 0;
+
+    
   }  
 
 
 function matchPassword() {  
-    var pw1 = document.getElementById("contra");  
-    var pw2 = document.getElementById("repcontraseña");  
+    var pw1 = document.getElementById("contra").value;  
+    var pw2 = document.getElementById("repcontraseña").value;  
     if(pw1 != pw2)  
     {   
         document.getElementById("messageconx").innerHTML = "**Las contraseñas deben ser iguales";
+        console.log(pw1 + " " + pw2);
+        return 1;
     }  
-    if(pw1 == pw2)  
+    if(pw1 == pw2 && pw1 != "")  
     {   
         document.getElementById("messagecon").innerHTML = "**Las contraseñas coinciden";
+        return 0;
     }  
-} 
+}  
+
+function validatedate() {
+  var today = new Date();
+
+
+
+  var datennow = document.getElementById("fechnac").value;
+
+
+  if(Date.parse(today) < Date.parse(datennow)){
+    mensajeemergente("Fecha Erronea","Seleccione una fecha válida");
+    return 1
+  }else{
+    return 0;
+  }
+
 }

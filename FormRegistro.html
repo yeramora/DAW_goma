@@ -30,16 +30,16 @@
           <input type="text" id="usuario" name="usuario" placeholder="Usuario" onkeypress="return (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122) || (event.charCode >= 48 && event.charCode <= 57)" /></p>
           
           <p><label for="contra" class="invisible">Contraseña:</label>
-          <input type="password" id="contra" name="contra" required placeholder="contraseña" onkeypress="return (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122) || (event.charCode >= 48 && event.charCode <= 57)"> <span id = "message" style="color:red"> </span></p>
+          <input type="password" id="contra" name="contra"  placeholder="contraseña" onkeypress="return (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122) || (event.charCode >= 48 && event.charCode <= 57)"> <span id = "message" style="color:red"> </span></p>
           
           <p><label for="repcontraseña" class="invisible">Repetir Contraseña:</label>
-          <input type="text" id="repcontraseña" name="repcontraseña" required placeholder="repetir contraseña"> <span id = "messageconx" style="color:red"> </span> <span id = "messagecon" style="color:green"> </span></p>
+          <input type="password" id="repcontraseña" name="repcontraseña"  placeholder="repetir contraseña"> <span id = "messageconx" style="color:red"> </span> <span id = "messagecon" style="color:green"> </span></p>
           
           <p><label for="correo" class="invisible">Correo:</label>
-          <input type="email" id="correo" name="correo" required placeholder="correo"></p>
+          <input type="email" id="correo" name="correo"  placeholder="correo"></p>
           
           <p><label for="sexo" class="invisible">Sexo</label>
-          <select id="sexo" name="sexo" required>
+          <select id="sexo" name="sexo" >
             <option value="">Sexo</option>
             <option value="hombre">Hombre</option>
             <option value="mujer">Mujer</option>
@@ -47,16 +47,17 @@
           </select></p>
   
           <p><label for="fechnac">Fecha de Nacimiento</label>
-          <input type="date" id="fechnac" name="correo" value="2018-07-22" min="1920-01-01" required placeholder="fecha"></p>
+          <input type="date" id="fechnac" name="correo" value="2018-07-22" min="1920-01-01"  placeholder="fecha"></p>
   
           <p><label for="pais"  class="invisible">Pais de residencia:</label>
-          <input type="text" id="pais" name="pais" required placeholder="pais de residencia"></p>
+          <input type="text" id="pais" name="pais"  placeholder="pais de residencia"></p>
           <p><label for="ciudad"  class="invisible">Ciudad:</label>
-          <input type="text" id="ciudad" name="ciudad" required placeholder="ciudad"></p>
+          <input type="text" id="ciudad" name="ciudad"  placeholder="ciudad"></p>
   
           <p><label for="foto">Foto perfil</label>
-          <input type="file" name="foto" id="foto" required></p>
+          <input type="file" name="foto" id="foto" ></p>
           
+          <button type="button" onclick="validaformulario()">Click Me!</button>
           <p class="enviar"><input type="submit" id="enviar" name="enviar">
           <input type="reset" id="borrar" name="Borrar"></p>
       </form>
