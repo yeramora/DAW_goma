@@ -23,5 +23,5 @@ if ($flag == 1 || $flag == 0){
     header('Location: index.php?error');
 }
 else{
-    header('Location: index_logged.php?usuario='.$_POST['usuario']);
+    header('Location: index_logged.php?usuario='.$_POST['username']);
 }

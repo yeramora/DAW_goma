@@ -1,0 +1,304 @@
+:root {
+
+  --Rclaro: #FFAF87;
+  --Rmedio: #FF8E72;
+  --Roscuro: #ED6A5E;
+  --Verde: #4CE0B3;
+  --Azul: #1cd0e7;
+
+}
+
+/*
+
+header {
+ background-color: #FFAF87;b
+ border-radius: 2em;
+ display:flex;
+ flex-direction: row;
+ border:solid 0.4em #ED6A5E; 
+ margin:auto;
+ 
+}
+
+
+*/
+/* GENERAL */
+
+
+/* extra impresion */ 
+
+body{
+  break-inside: avoid;
+}
+
+fieldset{
+  background-color: white;
+}
+/*fin extras */
+
+*{
+  box-sizing: border-box;
+  font-family: 'Verdana', sans-serif;
+}
+
+.invisible{
+ display:none;
+}
+
+body {
+background: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
+margin:0em;
+}
+
+header{
+  margin: 0 auto;
+  padding: 20px;
+  margin:1em;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1.5em;
+  
+}
+header>a>img{
+  float:left;
+  border-radius: 10em;
+}
+header>p{
+  color:rgb(221, 160, 221);
+  margin:0 auto;
+  float: left;
+  font-size: 3em;
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: .77;
+  padding: 0.2em;
+}
+
+header>aside{
+  float:right;
+  display:flex;
+  flex-direction: column;
+}
+header>aside>a{
+  color:rgb(221, 160, 221); 
+  margin: auto;
+  font-size: 0.9em;
+  font-weight: bold;
+  background-color: white;
+  text-transform: uppercase;
+  line-height: .77;
+  padding: 0.4em;
+}
+
+footer{
+  background-color: white;
+  border-top-left-radius: 1.5em;
+  border-top-right-radius: 1.5em;
+  margin:0.5em 0.5em 0 0.5em;
+  font-size:0.9em;
+  text-align:center;
+  padding:0.3em;
+  margin-top: 1em;
+  
+  /* border:solid 0.5em #ED6A5E; */
+}
+
+/* GENERAL FIN */
+
+/* INDEX*/
+#artfotos{
+  break-inside: avoid;
+}
+
+#artfotos>h1{
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1.2em;
+  color:white;
+}
+#artfotos>section {
+margin:auto;
+display:flex;
+flex-direction: row;
+display:block;
+}
+
+#artfotos>section>a>img {
+
+width:19%;
+height: 600px;
+}
+/* #artfotos>section>a>img:hover{
+  width:110%;
+  height:110%;
+  } */
+#busquedalogin{
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1em;
+  color:white;
+}
+/* INDEX FINISH */
+
+/* FORMULARIO REGISTRO */
+
+.formyera {
+  align-content: center;
+  background-color: #fff;
+  padding:1em;
+  margin:1em 3em 0 3em;
+  border-radius: 1.5em;
+}
+.formyera>h1{
+  font-size: 2em;
+  color:rgb(221, 160, 221);
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.formyera>p>input{
+  background: 0 0;
+  padding: 1em;
+  border:none;
+  width:20em;
+  border-bottom:4px solid black;
+}
+.formyera>p>input:focus{
+  border-bottom:4px solid plum;
+  color:plum;
+  font-size: 1em;
+}
+.formyera>p>input:focus::placeholder{
+  color:plum;
+}
+.formyera>p>input::placeholder{
+  color:black;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size:1.2em;
+}
+
+.formyera>p>label{
+  color:grey;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size:1em;
+}
+p>select{
+  background: 0 0;
+  padding:1em;
+  color:grey;
+  width:16em;
+  font-size: 1em;
+  font-weight: bold;
+  text-transform: uppercase;
+  border:none;
+  border-bottom:4px solid black;
+}
+.enviar>input{
+  width:45%;
+  border: 2px solid black !important;
+  font-size: 0.8em;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 1.5em;
+}
+
+/* FORM ACABADO */
+
+/* PAGINA USUARIO */
+#mainuser{
+  display:flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 1.5em;
+  margin:3em;
+}
+
+#infogeneral{
+  display:flex;
+  flex-direction: row;
+  margin:1em;
+}
+#infogeneral>section{
+  margin-left: 3em;
+}
+#infogeneral>section>h1{
+  font-size: 1em;
+  text-transform: uppercase;
+  font-weight: bold;
+  color:rgb(221, 160, 221);
+}
+#infouser{
+  background-color: white;
+}
+#infouser>button{
+  width:30%;
+  font-size: 1em;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 5em;
+  padding:2em;
+  color:white;
+  background:rgb(221, 160, 221);
+  margin:0 3em 0 3em;
+}
+
+#infouser>a{
+  width:30%;
+  font-size: 2em;
+  text-transform: uppercase;
+  font-weight: bold;
+  color:rgb(221, 160, 221);
+  margin:3em;
+}
+
+.row>img{
+  height:30%;
+  width:25%;
+  margin:1em;
+}
+/* PAGINA USUARIO ACABADO */
+
+/* RESULTADO BUSQUEDA */
+#busquedarow{
+  width:70%;
+  background-color: white;
+  border-radius: 1.5em;
+  margin: 0 auto;
+  display:flex;
+  flex-direction: row;
+  padding:3em;
+  margin-bottom: 2em;
+}
+#busquedarow>section{
+  display:flex;
+  flex-direction:column ;
+  
+}
+#busquedarow>section>h1{
+  font-size: 2em;
+  text-transform: uppercase;
+  font-weight: bold;
+  background:linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
+  color:rgb(221, 160, 221);
+}
+/* RESULTADO BUSQUEDA END */
+
+
+@media all and (max-width:1080px){ /*3 ARTICULOS*/
+  header>p{
+    font-size:4em;
+  }
+}
+
+@media all and (max-width:780px){ /*3 ARTICULOS*/
+  header>p{
+    font-size:2em;
+  }
+  header>aside>a{
+    font-size:1.2em;
+  }
+}

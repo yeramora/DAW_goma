@@ -26,12 +26,12 @@
 
         <?php
         $titulo = $_GET['titulo'];
-        $desde = $_GET['fechprod'];
+        $fechproduccion = $_GET['fechprod'];
         $paisproduccion = $_GET['paisprod'];
 
-        echo "<p style='color:white;'>Nombre: ".$titulo."</p>";
-        echo "<p style='color:white;'>Desde: ".$fechproduccion."</p>";
-        echo "<p style='color:white;'>País: ".$paisproduccion."</p>";
+        echo "<p style='color:black;'>Nombre: '.$titulo.'</p> ";
+        echo "<p style='color:black;'>Desde: '.$fechproduccion.'</p>";
+        echo "<p style='color:black;'>País: '.$paisproduccion.'</p>";
 
         ?>
     </section>

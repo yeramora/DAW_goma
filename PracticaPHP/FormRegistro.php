@@ -27,7 +27,7 @@
             ?>
         </h2>
         
-      <form name="registroform" action="/index_logged.php" class="formyera"  onsubmit="return validaformulario()">
+      <form name="registroform" action="respRegistro.php" method= "post" class="formyera"  onsubmit="return validaformulario()">
         <h1>Registro</h1>
           <p><label for="usuario" class="invisible">Usuario:</label>
           <input type="text" id="usuario" name="usuario" placeholder="Usuario" onkeypress="return (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122) || (event.charCode >= 48 && event.charCode <= 57)" /></p>
@@ -60,7 +60,6 @@
           <p><label for="foto">Foto perfil</label>
           <input type="file" name="foto" id="foto" ></p>
           
-          <button type="button" onclick="validaformulario()">Click Me!</button>
           <p class="enviar"><input type="submit" id="enviar" name="enviar">
           <input type="reset" id="borrar" name="Borrar"></p>
       </form>
