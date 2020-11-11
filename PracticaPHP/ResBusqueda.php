@@ -20,9 +20,9 @@
       <article id="busquedarow">
         <h1 class="invisible">resultadobusqueda</h1>
         <section>
-          <a href="FotoDetalle.html"><img src="img.png" alt="icono" width="300" height="200"></a>
-          <a href="user.html"><i class="fas fa-user" aria-hidden="true">Usuario</i></a>
-            <a href="album.html"><i class="fas fa-images" aria-hidden="true">NombreAlbum</i></a>
+          <a href="FotoDetalle.php"><img src="img.png" alt="icono" width="300" height="200"></a>
+          <a href="user.php"><i class="fas fa-user" aria-hidden="true">Usuario</i></a>
+            <a href="album.php"><i class="fas fa-images" aria-hidden="true">NombreAlbum</i></a>
         </section>
         <section>
           <h1>Titulo foto</h1>
@@ -34,9 +34,9 @@
       <article id="busquedarow">
         <h1 class="invisible">resultadobusqueda</h1>
         <section>
-          <a href="FotoDetalle.html"><img src="img.png" alt="icono" width="300" height="200"></a>
-          <a href="user.html"><i class="fas fa-user" aria-hidden="true">Usuario</i></a>
-            <a href="album.html"><i class="fas fa-images" aria-hidden="true">NombreAlbum</i></a>
+          <a href="FotoDetalle.php"><img src="img.png" alt="icono" width="300" height="200"></a>
+          <a href="user.php"><i class="fas fa-user" aria-hidden="true">Usuario</i></a>
+            <a href="album.php"><i class="fas fa-images" aria-hidden="true">NombreAlbum</i></a>
         </section>
         <section>
           <h1>Titulo foto</h1>
@@ -45,7 +45,7 @@
         </section>
     </main>
     <footer>
-      <h3><a href="acerca.html">Acerca</a></h3>
+      <h3><a href="acerca.php">Acerca</a></h3>
       <p>Copyright &copy; DAW <time datetime="2020">2020-2021</time></p>
     </footer>
   </body>

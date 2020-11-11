@@ -18,7 +18,7 @@
     <main>
       <article class="formyera" id="albumsend">
         <h1>Titulo Foto</h1>
-        <p> <a href="FotoDetalle.html"><img src="img.png" alt="icono" width="300" height="300"></a></p>
+        <p> <a href="FotoDetalle.php"><img src="img.png" alt="icono" width="300" height="300"></a></p>
         <p><time datetime="2020">28/09/2020</time></p>
         <p>Pais: España</p>
         <p>Album: Fotos Favoritas</p>
@@ -29,7 +29,7 @@
       </article>
     </main>
     <footer>
-        <h3><a href="acerca.html">Acerca</a></h3>
+        <h3><a href="acerca.php">Acerca</a></h3>
         <p>Copyright &copy; DAW <time datetime="2020">2020-2021</time></p>
     </footer>
   </body>

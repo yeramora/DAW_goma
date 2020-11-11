@@ -17,7 +17,7 @@
     include('header.php');
     ?>
     <main>
-      <form action="/ResBusqueda.html" class="formyera">
+      <form action="/ResBusqueda.php" class="formyera">
         <h1>Busqueda</h1>
           <p><label for="titulo" class="invisible">Titulo</label >
           <input type="text" id="titulo" name="titulo" placeholder="titulo"></p>
@@ -33,7 +33,7 @@
       </form>
     </main>
     <footer>
-      <h3><a href="acerca.html">Acerca</a></h3>
+      <h3><a href="acerca.php">Acerca</a></h3>
       <p>Copyright &copy; DAW <time datetime="2020">2020-2021</time></p>
     </footer>
   </body>

@@ -20,7 +20,7 @@
     <main>
       <article>
         <h1 class="invisible">Solicitar Album</h1>
-      <form action="SolicitarAlbumsend.html" class="formyera">
+      <form action="SolicitarAlbumsend.php" class="formyera">
         <h1>Solicitar Album</h1>
           <p>Rellene las opciones de este formulario para continuar con su compra</p>
           <table>
@@ -155,7 +155,7 @@
     </article>
     </main>
     <footer>
-      <h3><a href="acerca.html">Acerca</a></h3>
+      <h3><a href="acerca.php">Acerca</a></h3>
           Copyright &copy; DAW <time datetime="2020">2020</time>
     </footer>
   </body>

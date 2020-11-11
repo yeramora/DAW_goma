@@ -19,7 +19,7 @@
     include('headersinlogear.php');
     ?>
     <main>
-      <form name="registroform" action="/index_logged.html" class="formyera"  onsubmit="return validaformulario()">
+      <form name="registroform" action="/index_logged.php" class="formyera"  onsubmit="return validaformulario()">
         <h1>Registro</h1>
           <p><label for="usuario" class="invisible">Usuario:</label>
           <input type="text" id="usuario" name="usuario" placeholder="Usuario" onkeypress="return (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122) || (event.charCode >= 48 && event.charCode <= 57)" /></p>
@@ -58,7 +58,7 @@
       </form>
     </main>
     <footer>
-      <h3><a href="acerca.html">Acerca</a></h3>
+      <h3><a href="acerca.php">Acerca</a></h3>
       <p>Copyright &copy; DAW <time datetime="2020">2020-2021</time></p>
     </footer>
   </body>

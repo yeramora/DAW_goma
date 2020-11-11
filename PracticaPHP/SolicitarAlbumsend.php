@@ -59,13 +59,13 @@
 
           <p>Coste: 72,95€</p>
           
-          <p class="enviar"><button>Aceptar</button> <a href="index_logged.html"></a> </p>
+          <p class="enviar"><button>Aceptar</button> <a href="index_logged.php"></a> </p>
         
         </article>
 
     </main>
     <footer>
-      <h3><a href="acerca.html">Acerca</a></h3>
+      <h3><a href="acerca.php">Acerca</a></h3>
           Copyright &copy; DAW <time datetime="2020">2020</time>
     </footer>
   </body>

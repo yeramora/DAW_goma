@@ -17,7 +17,7 @@
     include('headersinlogear.php');
     ?>
     <main>
-            <form action="/index_logged.html" class="formyera">
+            <form action="/index_logged.php" class="formyera">
               <h2>Tienes que estar logeado para acceder a esta informacion</h2>
               <p><label for="username" class="invisible">Usuario:</label>
               <input type="text" placeholder="Usuario" id="username"></p>
@@ -25,13 +25,13 @@
               <input type="password" placeholder="Contraseña" id="password"></p>
               
               <p class="enviar"><input type="submit" value="Login"></p>
-              <a href="index.html">¿Has olvidado tu Contraseña?</a>
+              <a href="index.php">¿Has olvidado tu Contraseña?</a>
                 <h2>¿Aun no estas registrado?</h2>
-                <a href="FormRegistro.html"> <p>Registrate</p> </a>
+                <a href="FormRegistro.php"> <p>Registrate</p> </a>
             </form>
     </main>   
     <footer>
-        <h3><a href="acerca.html">Acerca</a></h3>
+        <h3><a href="acerca.php">Acerca</a></h3>
         <p>Copyright &copy; DAW <time datetime="2020">2020-2021</time></p>
     </footer>
   </body>

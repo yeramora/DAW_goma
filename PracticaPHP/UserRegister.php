@@ -32,8 +32,8 @@
         <button value="borrar cuenta">Mis albums</button>
         <button value="borrar cuenta">Mi perfil</button>
           <p>esta pagina solo muestra o los albums o el perfil,cambiando entre ambos al pulsarlos</p>
-          <a href="crearalbum.html">Crear album</a>
-          <a href="SolicitarAlbum.html">Solicitar&nbsp;album</a> 
+          <a href="crearalbum.php">Crear album</a>
+          <a href="SolicitarAlbum.php">Solicitar&nbsp;album</a> 
           <fieldset class="row">
             <legend>Al pulsar en mis albums</legend>
             <img src="img.png" alt="icono" width="300" height="300">
@@ -45,7 +45,7 @@
           </fieldset>
           <fieldset>
             <legend>Al pulsar en mi perfil</legend>
-            <form action="/index_logged.html" class="formyera">
+            <form action="/index_logged.php" class="formyera">
               <h1>Mis datos</h1>
                 <p><label for="usuario" class="invisible">Usuario:</label >
                 <input type="text" id="usuario" name="usuario" required placeholder="Usuario"></p>
@@ -81,12 +81,12 @@
                 <p class="enviar"><input type="submit" id="enviar" name="enviar">
                 <input type="reset" id="borrar" name="Borrar"></p>
             </form>
-            <p><button value="borrar cuenta">Borrar cuenta</button><a href="SolicitarAlbumsend.html"></a></p>
+            <p><button value="borrar cuenta">Borrar cuenta</button><a href="SolicitarAlbumsend.php"></a></p>
           </fieldset>
         </article> 
     </main>
     <footer>
-      <h3><a href="acerca.html">Acerca</a></h3>
+      <h3><a href="acerca.php">Acerca</a></h3>
           Copyright &copy; DAW <time datetime="2020">2020</time>
     </footer>
   </body>
