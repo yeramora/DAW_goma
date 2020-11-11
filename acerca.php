@@ -8,11 +8,11 @@
   </head>
   <body>
     <header>
-      <a href="index.html"><img src="logo.png" alt="icono" width="100" height="100"></a> 
+      <a href="index.php"><img src="logo.png" alt="icono" width="100" height="100"></a> 
       <p>Memories</p>
       <aside>
-        <a href="FormBusqueda.html"><i class="fa fa-search" aria-hidden="true">Buscar</i></a>
-        <a href="index.html"><i class="fas fa-sign-out-alt" aria-hidden="true">Log out</i></a>
+        <a href="FormBusqueda.php"><i class="fa fa-search" aria-hidden="true">Buscar</i></a>
+        <a href="index.php"><i class="fas fa-sign-out-alt" aria-hidden="true">Log out</i></a>
       </aside>
     </header>
     <main>
@@ -21,7 +21,7 @@
       </article>
     </main>   
     <footer>
-        <h3><a href="acerca.html">Acerca</a></h3>
+        <h3><a href="acerca.php">Acerca</a></h3>
         <p>Copyright &copy; DAW <time datetime="2020">2020-2021</time></p>
     </footer>
   </body>
