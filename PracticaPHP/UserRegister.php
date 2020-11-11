@@ -45,7 +45,7 @@
           </fieldset>
           <fieldset>
             <legend>Al pulsar en mi perfil</legend>
-            <form action="/index_logged.php" class="formyera">
+            <form action="RespRegistroNuevoUser.php" method = "post" class="formyera">
               <h1>Mis datos</h1>
                 <p><label for="usuario" class="invisible">Usuario:</label >
                 <input type="text" id="usuario" name="usuario" required placeholder="Usuario"></p>

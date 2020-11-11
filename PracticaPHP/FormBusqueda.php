@@ -17,7 +17,7 @@
     include('header.php');
     ?>
     <main>
-      <form action="/ResBusqueda.php" class="formyera">
+      <form action="ResBusqueda.php" method = "get" class="formyera">
         <h1>Busqueda</h1>
           <p><label for="titulo" class="invisible">Titulo</label >
           <input type="text" id="titulo" name="titulo" placeholder="titulo"></p>

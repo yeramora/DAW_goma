@@ -19,6 +19,14 @@
     include('headersinlogear.php');
     ?>
     <main>
+    <h2 class="text_shadow" style="color:red;">
+            <?php 
+                if(isset($_GET['error'])){
+                    echo "Error en el registro";
+                }
+            ?>
+        </h2>
+        
       <form name="registroform" action="/index_logged.php" class="formyera"  onsubmit="return validaformulario()">
         <h1>Registro</h1>
           <p><label for="usuario" class="invisible">Usuario:</label>

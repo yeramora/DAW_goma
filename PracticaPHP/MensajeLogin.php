@@ -18,7 +18,7 @@
     include('headersinlogear.php');
     ?>
     <main>
-        <form class="formyera" name="formulario" action="/index_logged.php" onsubmit="return validateForm()">
+        <form class="formyera" name="formulario" action="acceso.php" method = "post" onsubmit="return validateForm()">
           <h1>Inicia sesion</h1>
             <p><label for="username">Usuario:</label><input type="text" placeholder="usuario" id="username" name="username" ></p>
           <p><label for="password">Contraseña:</label><input type="password" placeholder="password" id="password"  name="password"></p>

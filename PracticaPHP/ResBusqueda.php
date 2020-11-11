@@ -18,6 +18,24 @@
     ?>
     <main>
       <article id="busquedarow">
+      
+      <section class="col-4 margin_auto padding20">
+        <h2 class="white text_shadow">Resultados de la búsqueda</h2>
+        <br>
+        <br>
+
+        <?php
+        $titulo = $_GET['titulo'];
+        $desde = $_GET['fechprod'];
+        $paisproduccion = $_GET['paisprod'];
+
+        echo "<p style='color:white;'>Nombre: ".$titulo."</p>";
+        echo "<p style='color:white;'>Desde: ".$fechproduccion."</p>";
+        echo "<p style='color:white;'>País: ".$paisproduccion."</p>";
+
+        ?>
+    </section>
+
         <h1 class="invisible">resultadobusqueda</h1>
         <section>
           <a href="FotoDetalle.php"><img src="img.png" alt="icono" width="300" height="200"></a>
