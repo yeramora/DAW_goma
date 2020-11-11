@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <link rel="stylesheet" href="cssYera.css" title="Estilo básico" media="screen">  
+    <link rel="stylesheet" href="cssAlex.css" title="Estilo básico" media="screen">
+    <link rel="stylesheet" href="cssModoNoche.css" title="Modo noche" media="screen">
+    <link rel="stylesheet" href="cssImprimir.css" media="print">
+    <link rel="stylesheet" href="LetrasGrandes.css" title="LetrasGrandes" media="screen"> 
+    <link rel="stylesheet" href="Coontraste.css" title="Contraste" media="screen"> 
+    <link rel="stylesheet" href="ContrasteLetras.css" title="LetrasGrandes" media="screen"> 
+    <script src="https://kit.fontawesome.com/6b4ca2c1fd.js" crossorigin="anonymous"></script> 
+    <meta charset="UTF-8">
+    <title>Formulario de Busqueda</title>
+  </head>
+  <body>
+    <header>
+      <a href="index.html"><img src="logo.png" alt="icono" width="100" height="100"></a> 
+      <p>Memories</p>
+      <aside>
+        <a href="FormBusqueda.html"><i class="fa fa-search" aria-hidden="true">Buscar</i></a>        
+        <a href="UserRegister.html"><i class="fas fa-sign-out-alt" aria-hidden="true">Mi perfil</i></a>
+      </aside>
+    </header>
+    <main>
+      <form action="/ResBusqueda.html" class="formyera">
+        <h1>Busqueda</h1>
+          <p><label for="titulo" class="invisible">Titulo</label >
+          <input type="text" id="titulo" name="titulo" placeholder="titulo"></p>
+  
+          <p><label for="paisprod"  class="invisible">Pais</label>
+          <input type="text" id="paisprod" name="paisprod" placeholder="pais"></p>
+          
+          <p><label for="fechprod">Fecha</label>
+          <input type="date" id="fechprod" name="fechprod" value="2018-07-22" min="1920-01-01"></p>
+          
+          <p class="enviar"><input type="submit" id="buscar" name="Buscar" value="Buscar">
+          <input type="reset" id="borrar" name="Borrar"></p>
+      </form>
+    </main>
+    <footer>
+      <h3><a href="acerca.html">Acerca</a></h3>
+      <p>Copyright &copy; DAW <time datetime="2020">2020-2021</time></p>
+    </footer>
+  </body>
+</html>

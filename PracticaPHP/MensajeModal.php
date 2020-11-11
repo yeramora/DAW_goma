@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <script src="https://kit.fontawesome.com/6b4ca2c1fd.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="cssYera.css" title="Estilo básico" media="screen">  
+    <link rel="stylesheet" href="cssAlex.css" title="Estilo básico" media="screen">
+    <link rel="stylesheet" href="cssModoNoche.css" title="Modo noche" media="screen">
+    <link rel="stylesheet" href="cssImprimir.css" media="print">
+    <link rel="stylesheet" href="LetrasGrandes.css" title="LetrasGrandes" media="screen"> 
+    <link rel="stylesheet" href="Coontraste.css" title="Contraste" media="screen"> 
+    <link rel="stylesheet" href="ContrasteLetras.css" title="ContrasteLetras" media="screen">  
+    <meta charset="UTF-8">
+    <title>Formulario de Busqueda</title>
+  </head>
+  <body>
+  <?php 
+    include('headersinlogear.php');
+    ?>
+    <main>
+            <form action="/index_logged.html" class="formyera">
+              <h2>Tienes que estar logeado para acceder a esta informacion</h2>
+              <p><label for="username" class="invisible">Usuario:</label>
+              <input type="text" placeholder="Usuario" id="username"></p>
+              <p><label for="password" class="invisible">Contraseña:</label>
+              <input type="password" placeholder="Contraseña" id="password"></p>
+              
+              <p class="enviar"><input type="submit" value="Login"></p>
+              <a href="index.html">¿Has olvidado tu Contraseña?</a>
+                <h2>¿Aun no estas registrado?</h2>
+                <a href="FormRegistro.html"> <p>Registrate</p> </a>
+            </form>
+    </main>   
+    <footer>
+        <h3><a href="acerca.html">Acerca</a></h3>
+        <p>Copyright &copy; DAW <time datetime="2020">2020-2021</time></p>
+    </footer>
+  </body>
+</html>
