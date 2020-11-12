@@ -17,13 +17,11 @@
     include('headersinlogear.php');
     ?>
     <main>
-            <form action="/index_logged.php" class="formyera">
+            <form class="formyera" name="formulario" action="acceso.php" method = "post" onsubmit="return validateForm()">
               <h2>Tienes que estar logeado para acceder a esta informacion</h2>
-              <p><label for="username" class="invisible">Usuario:</label>
-              <input type="text" placeholder="Usuario" id="username"></p>
-              <p><label for="password" class="invisible">Contraseña:</label>
-              <input type="password" placeholder="Contraseña" id="password"></p>
-              
+              <p><label for="username">Usuario:</label><input type="text" placeholder="usuario" id="username" name="username" ></p>
+            <p><label for="password">Contraseña:</label><input type="password" placeholder="password" id="password"  name="password"></p>
+
               <p class="enviar"><input type="submit" value="Login"></p>
               <a href="index.php">¿Has olvidado tu Contraseña?</a>
                 <h2>¿Aun no estas registrado?</h2>

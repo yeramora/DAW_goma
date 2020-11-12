@@ -17,28 +17,38 @@
     include('header.php');
     ?>
     <main>
-      <article id="busquedarow">
-      
-      <section class="col-4 margin_auto padding20">
+    <section class="formyera">
         <h2 class="white text_shadow">Resultados de la búsqueda</h2>
         <br>
         <br>
 
         <?php
-        $titulo = $_GET['titulo'];
-        $fechproduccion = $_GET['fechprod'];
-        $paisproduccion = $_GET['paisprod'];
+        if(isset($_GET['titulo'])){
+          $titulo = $_GET['titulo'];
+          echo "<p style='color:black;'>Nombre: '.$titulo.'</p> ";
+        }else{
 
-        echo "<p style='color:black;'>Nombre: '.$titulo.'</p> ";
-        echo "<p style='color:black;'>Desde: '.$fechproduccion.'</p>";
-        echo "<p style='color:black;'>País: '.$paisproduccion.'</p>";
+        }
 
+        if(isset($_GET['fechprod'])){
+          $fechproduccion = $_GET['fechprod'];
+          echo "<p style='color:black;'>Desde: '.$fechproduccion.'</p>";
+        }else{
+
+        }
+        if(isset($_GET['paisprod'])){
+          $paisproduccion = $_GET['paisprod'];
+          echo "<p style='color:black;'>País: '.$paisproduccion.'</p>";
+        }else{
+
+        }
         ?>
     </section>
+      <article id="busquedarow">
 
         <h1 class="invisible">resultadobusqueda</h1>
         <section>
-          <a href="FotoDetalle.php"><img src="img.png" alt="icono" width="300" height="200"></a>
+          <a href="FotoDetalle.php?id=1"><img src="img.png" alt="icono" width="300" height="200"></a>
           <a href="user.php"><i class="fas fa-user" aria-hidden="true">Usuario</i></a>
             <a href="album.php"><i class="fas fa-images" aria-hidden="true">NombreAlbum</i></a>
         </section>
@@ -52,7 +62,7 @@
       <article id="busquedarow">
         <h1 class="invisible">resultadobusqueda</h1>
         <section>
-          <a href="FotoDetalle.php"><img src="img.png" alt="icono" width="300" height="200"></a>
+          <a href="FotoDetalle.php?id=2"><img src="img.png" alt="icono" width="300" height="200"></a>
           <a href="user.php"><i class="fas fa-user" aria-hidden="true">Usuario</i></a>
             <a href="album.php"><i class="fas fa-images" aria-hidden="true">NombreAlbum</i></a>
         </section>

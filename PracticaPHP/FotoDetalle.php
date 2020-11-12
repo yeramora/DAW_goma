@@ -19,15 +19,13 @@
      
       <article class="formyera" id="albumsend">
       <?php 
-if(isset($_GET['foto']) && $_GET['foto']==1){
-            
-  echo '<div class="split-foto dcha-foto">gitananana</div>';
-}else if(isset($_GET['foto']) && $_GET['foto']==2){
-
-  echo '<div class="split-foto dcha-foto2">aaaaaaaaa</div>';
-  
-}
-        $infofoto = array("foto"=>"img.png","titulo"=>"title ","nombre"=>"nombre", "fecha"=>"01/11/2010" , "pais"=>"india", "album"=>"viajes dorle","usu"=>"dorleta"," 450-900DPI"=>"jiji");
+        $id = $_GET['id'];
+        if($id==1){
+          $infofoto = array("foto"=>"descarga.png","titulo"=>"title2 ","nombre"=>"nombre2", "fecha"=>"01/11/2010" , "pais"=>"india2", "album"=>"viajes dorle","usu"=>"dorleta");
+        }
+        else{
+          $infofoto = array("foto"=>"img.png","titulo"=>"title ","nombre"=>"nombre", "fecha"=>"01/11/2010" , "pais"=>"india", "album"=>"viajes dorle","usu"=>"dorleta");
+        }
         echo "<h1>".$infofoto['titulo']."</h1>";
         echo "<p><a href=FotoDetalle.php><img src='".$infofoto['foto']."' alt='nombre' width=300 height=300> </a></p>";
         echo "<p><time datetime=2020>".$infofoto['fecha']."</time></p>";

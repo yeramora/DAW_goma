@@ -21,11 +21,11 @@
         <h1>Las ultimas fotos</h1>
           <section>
             <h2 class="invisible">section</h2>
-          <a href="FotoDetalle.php"><img class="diagonal" src="img.png" alt="icono" width="400" height="600"></a>
-          <a href="FotoDetalle.php"><img class="diagonal" src="img.png" alt="icono" width="400" height="600"></a>
-          <a href="FotoDetalle.php"><img class="diagonal" src="img.png" alt="icono" width="400" height="600"></a>
-          <a href="FotoDetalle.php"><img class="diagonal" src="img.png" alt="icono" width="400" height="600"></a>
-          <a href="FotoDetalle.php"><img class="diagonal" src="img.png" alt="icono" width="400" height="600"></a>
+          <a href="FotoDetalle.php?id=1"><img class="diagonal" src="img.png" alt="icono" width="400" height="600"></a>
+          <a href="FotoDetalle.php?id=2"><img class="diagonal" src="img.png" alt="icono" width="400" height="600"></a>
+          <a href="FotoDetalle.php?id=1"><img class="diagonal" src="img.png" alt="icono" width="400" height="600"></a>
+          <a href="FotoDetalle.php?id=2"><img class="diagonal" src="img.png" alt="icono" width="400" height="600"></a>
+          <a href="FotoDetalle.php?id=1"><img class="diagonal" src="img.png" alt="icono" width="400" height="600"></a>
           </section>
           <article id="busquedalogin">
             <h1>Busqueda</h1>
