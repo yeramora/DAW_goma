@@ -32,7 +32,7 @@
         <button value="borrar cuenta">Mis albums</button>
         <button value="borrar cuenta">Mi perfil</button>
           <p>esta pagina solo muestra o los albums o el perfil,cambiando entre ambos al pulsarlos</p>
-          <a href="crearalbum.php">Crear album</a>
+          <a href="crearAlbum.php">Crear album</a>
           <a href="SolicitarAlbum.php">Solicitar&nbsp;album</a> 
           <fieldset class="row">
             <legend>Al pulsar en mis albums</legend>

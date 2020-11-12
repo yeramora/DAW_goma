@@ -316,7 +316,9 @@ p>select{
   font-weight: bold;
   table-layout: fixed;
 }
-
+#tabphp{
+  margin:1em;
+}
 
 @media all and (max-width:1080px){ /*3 ARTICULOS*/
   header>p{
@@ -335,5 +337,8 @@ p>select{
     font-weight: bold;
     table-layout: fixed;
     padding:0;
+  }
+  #tabphp{
+    margin:0em;
   }
 }

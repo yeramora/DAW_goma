@@ -18,9 +18,28 @@
     include('header.php');
     ?>
     <main>
+    <?php
+    $tablaprecios = array();
+    $deductor1=0;
+    $deductor2=0;
+    for($i=1;$i<16;$i++){
+      if($i>4){
+        $deductor1=($i-4)*0.02;
+        if($i>12){
+          $deductor2=($i-11)*0.01;
+        }
+      }
+      $p1=0.10*$i-$deductor1-$deductor2;
+      $p2=0.16*$i-$deductor1-$deductor2;
+      $p3=0.25*$i-$deductor1-$deductor2;
+      $p4=0.31*$i-$deductor1-$deductor2;
+      array_push($tablaprecios,array("Numero de paginas"=>$i, "Numero de fotos"=>$i*3 , "150-300DPI"=>$p1, "450-900DPI"=>$p2," 150-300DPI"=>$p3," 450-900DPI"=>$p4));
+    }
+?>
+
       <article>
         <h1 class="invisible">Solicitar Album</h1>
-      <form action="SolicitarAlbumsend.php" class="formyera">
+      <form action="SolicitarAlbumsend.php" class="formyera" method = "post">
         <h1>Solicitar Album</h1>
           <p>Rellene las opciones de este formulario para continuar con su compra</p>
           <table>
@@ -151,6 +170,30 @@
           <p class="enviar"><input type="submit" id="enviar" name="enviar">
             <input type="reset" id="borrar" name="Borrar"></p>
           <table id="tabla"></table>
+          <?php if (count($tablaprecios) > 0): ?>
+            <table>
+              <thead>
+                <tr>
+                  <th></th>
+                  <th></th>
+                  <th>blanco y negro</th>
+                  <th></th>
+                  <th>Color</th>
+                </tr>
+                <tr>
+                  <th><?php echo implode('</th><th id="tabphp">', array_keys(current($tablaprecios))); ?></th>
+               </tr>
+             </thead>
+             <tbody>
+                <?php foreach ($tablaprecios as $row): array_map('htmlentities', $row); ?>
+                  <tr>
+                    <td><?php echo implode('</td><td>', $row); ?></td>
+                  </tr>
+                <?php endforeach; ?>
+              </tbody>
+              </table>
+            <?php endif; ?>
+
       </form> 
     </article>
     </main>

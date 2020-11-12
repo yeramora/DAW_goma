@@ -21,43 +21,65 @@
         <h1>Informacion Album Solicitado</h1>
           <img src="descarga.png" alt="fotoalbum">
 
-          <p>Titulo del album: "Album de recuerdos"</p>
-    
-            <p>Texto Adicional: De parte de ...</p>
+          <?php
+            $nombre = $_POST['named'];
+            $titulo = $_POST['tituloa'];
+            $extra = $_POST['texta'];
+            $colortot = $_POST['colora'];
+            $color = $_POST['coloralbum'];
+            $copias = $_POST['numa'];
+            $resolucion = $_POST['reso'];
+            $calle=$_POST['calle'];
+            $numero=$_POST['numberdirect'];
+            $loc=$_POST['localidad'];
 
-            <p>Correo Electronico: mafilg@gmail.com</p>
 
-  
-            <p>Direccion de Entrega:</p>
-            <p>Calle: Fuencaliente</p>
-            
-            <p>Numero: 3</p>
-            
-            <p>Piso: 8</p>
-            
-            <p>Puerta: B</p>
-            
-            <p>Codigo Postal: 0512</p>
-            
-            <p>Localidad: Valencia</p>
-            
-            <p>Provincia: Valencia</p>
-            
-            <p>Pais: España</p>
-            
-            <p>Telefono: "sin especificar" </p>
-            
-          <p>Color de portada:</p> <!--AQUI IRIA UN DIV CON UN BACK GROUND COLOR A LA DERECHA-->
-  
-           <p>Numero de copias: 2</p>
-  
-           <p>Resolucion Fotos: 450 DPI</p>
-              
-           <p>Fecha de entrega: 24/11/2020</p>
-  
-           <p>Color: B/N</p>
+            $numero_paginas = 20;
+            $numero_fotos = 10;
 
-          <p>Coste: 72,95€</p>
+
+            $precio_fotos = 0;
+            $precio_paginas = 0;
+            $precio_total = 0;
+
+            if($color == 'blackwhite'){
+                $precio_fotos = 0;
+            }
+            else{
+                $precio_fotos = $numero_fotos * 0.05;
+            }
+
+            if($resolucion>300){
+                $precio_fotos = $precio_fotos + ($numero_fotos * 0.02);
+            }
+
+            if($numero_paginas<5){
+                $precio_paginas = $numero_paginas * 0.10;
+            }
+            if(5<$numero_paginas && $numero_paginas>10){
+                $precio_paginas = $numero_paginas * 0.08;
+            }
+            if($numero_paginas>10){
+                $precio_paginas = $numero_paginas * 0.07;
+            }
+
+            $precio_total = $precio_fotos + $precio_paginas;
+            $precio_total = $precio_total * $copias;
+
+            echo "<p>Nombre: ".$nombre."</p>";
+            echo "<p>Título: ".$titulo."</p>";
+            echo "<p>Texto adicional: ".$extra."</p>";
+            echo "<p>Número de copias: ".$copias."</p>";
+            echo "<p>Precio total: ".$precio_total."</p>";
+
+            if($color == 'blackwhite'){
+                echo "<p>Color: Blanco y negro</p>";
+            }else{
+                echo "<p>Color: En color</p>";
+                echo "<p  style='background-color:".$colortot.";'>Color elegido:".$colortot."</p>";
+            }
+            echo "<p> Será enviado a ".$loc." Calle ".$calle." numero ".$numero."</p>";
+        ?>
           
           <p class="enviar"><button>Aceptar</button> <a href="index_logged.php"></a> </p>
         

@@ -16,16 +16,26 @@
     include('header.php');
     ?>
     <main>
+     
       <article class="formyera" id="albumsend">
-        <h1>Titulo Foto</h1>
-        <p> <a href="FotoDetalle.php"><img src="img.png" alt="icono" width="300" height="300"></a></p>
-        <p><time datetime="2020">28/09/2020</time></p>
-        <p>Pais: España</p>
-        <p>Album: Fotos Favoritas</p>
-        <p>Usuario: user1</p>
-        <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium, similique! Praesentium incidunt earum sit commodi soluta? Temporibus dolorem corrupti voluptas sunt illum eligendi. Nesciunt eaque, dolorem sapiente unde culpa totam?
-        </p>
+      <?php 
+if(isset($_GET['foto']) && $_GET['foto']==1){
+            
+  echo '<div class="split-foto dcha-foto">gitananana</div>';
+}else if(isset($_GET['foto']) && $_GET['foto']==2){
+
+  echo '<div class="split-foto dcha-foto2">aaaaaaaaa</div>';
+  
+}
+        $infofoto = array("foto"=>"img.png","titulo"=>"title ","nombre"=>"nombre", "fecha"=>"01/11/2010" , "pais"=>"india", "album"=>"viajes dorle","usu"=>"dorleta"," 450-900DPI"=>"jiji");
+        echo "<h1>".$infofoto['titulo']."</h1>";
+        echo "<p><a href=FotoDetalle.php><img src='".$infofoto['foto']."' alt='nombre' width=300 height=300> </a></p>";
+        echo "<p><time datetime=2020>".$infofoto['fecha']."</time></p>";
+        echo "<p>Nombre: ".$infofoto['nombre']."</p>";
+        echo "<p>Pais: ".$infofoto['pais']."</p>";
+        echo "<p>Album: ".$infofoto['album']."</p>";
+        echo "<p>Usuario: ".$infofoto['usu']."</p>";
+      ?>
       </article>
     </main>
     <footer>
