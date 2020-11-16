@@ -1,16 +1,26 @@
     <!DOCTYPE html>
 <html lang="es">
   <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="cssYera.css" title="Estilo básico" media="screen">  
-    <link rel="stylesheet" href="cssAlex.css" title="Estilo básico" media="screen">
-    <link rel="stylesheet" href="cssModoNoche.css" title="Modo noche" media="screen">    
-    <link rel="stylesheet" href="cssImprimir.css" media="print">
-    <link rel="stylesheet" href="LetrasGrandes.css" title="LetrasGrandes" media="screen"> 
-    <link rel="stylesheet" href="Coontraste.css" title="Contraste" media="screen"> 
-    <link rel="stylesheet" href="ContrasteLetras.css" title="ContrasteLetras" media="screen">  
-    <script src="https://kit.fontawesome.com/6b4ca2c1fd.js" crossorigin="anonymous"></script>
-    <title>Memories LOGGED</title>
+  <?php 
+    session_start();
+    if (!isset($_SESSION['sesion'])) {
+        header('Location:'.'index.php');
+    }else{
+        
+        if($_SESSION['sesion']['Estilo'] == "style"){
+            include('meta.php');
+        }else if($_SESSION['sesion']['Estilo'] == "Alto contraste"){
+            include('metaAltContraste.php');
+        }else if($_SESSION['sesion']['Estilo'] == "Contraste y Letras"){
+            include('metaLetrasContraste.php');
+        }else if($_SESSION['sesion']['Estilo'] == "Letras Grandes"){
+            include('metaLetrasGrandes.php');
+        }else if($_SESSION['sesion']['Estilo'] == "Modo Noche"){
+            include('metaModoNoche.php');
+        } 
+    }
+?>
+    <title>Memories - LOGGED</title>
   </head>
   <body>
   <?php 
@@ -20,12 +30,41 @@
       <article id="infogeneral">
         <h1 class="invisible">Infogeneral</h1>
           <img src="img.png" alt="icono" width="300" height="300">
-          <section>
-            <h1>Nombreusuario</h1>
+          <section id>
+            <h1> Bienvenido 
+              <?php
+                    
+                    if (isset($_SESSION['sesion'])) {
+                        echo $_SESSION['sesion']['usuario'];
+                    }
+                ?>
+                </h1>
           <p>Info usuario lorem ipsum</p>
           <p>Info usuario lorem ipsum</p>
           <p>Info usuario lorem ipsum</p>
           </section>
+          <p class="white text_shadow" style="font-size: .7em;"> Última conexión: 
+                <?php 
+
+                    if (isset($_SESSION['sesion'])) {
+
+                        if(isset($_COOKIE['tiempo'])){
+                            $cookie = json_decode($_COOKIE['tiempo'],true);
+                            echo $cookie['mday'] . " de " . $cookie['month'] . " de " . $cookie['year'] . " a las " . $cookie['hours'] .":". $cookie['minutes'];
+                            $date = json_encode(getdate());
+                            setcookie('tiempo',$date,time() + 86400 * 90);
+
+                        }else{
+                            echo "Nunca";
+                            $date = json_encode(getdate());
+                            setcookie('tiempo',$date,time() + 86400 * 90);
+
+                        }
+                        
+                        
+                    }
+                ?>
+            </p>
       </article>
       <article id="infouser">
         <h1 class="invisible">Mi cuenta</h1>
@@ -83,6 +122,8 @@
             </form>
             <p><button value="borrar cuenta">Borrar cuenta</button><a href="SolicitarAlbumsend.php"></a></p>
           </fieldset>
+
+         
         </article> 
     </main>
     <footer>

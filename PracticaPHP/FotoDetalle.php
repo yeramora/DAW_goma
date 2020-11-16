@@ -1,20 +1,31 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-<link rel="stylesheet" href="cssAlex.css" title="Estilo básico" media="screen"> 
-<link rel="stylesheet" href="cssYera.css" title="Estilo básico" media="screen">  
-<link rel="stylesheet" href="LetrasGrandes.css" title="GrandeLetra" media="screen">
-<link rel="stylesheet" href="LetrasGrandes.css" title="LetrasGrandes" media="screen"> 
-<link rel="stylesheet" href="Coontraste.css" title="Contraste" media="screen">
-<link rel="stylesheet" href="ContrasteLetras.css" title="ContrasteLetras" media="screen"> 
-    <script src="https://kit.fontawesome.com/6b4ca2c1fd.js" crossorigin="anonymous"></script>
-    <meta charset="UTF-8">
     <title>Formulario de Busqueda</title>
+    <?php 
+    session_start();
+    if (!isset($_SESSION['sesion'])) {
+        header('Location:'.'index.php');
+    }else{
+        
+        if($_SESSION['sesion']['Estilo'] == "style"){
+            include('meta.php');
+        }else if($_SESSION['sesion']['Estilo'] == "Alto contraste"){
+            include('metaAltContraste.php');
+        }else if($_SESSION['sesion']['Estilo'] == "Contraste y Letras"){
+            include('metaLetrasContraste.php');
+        }else if($_SESSION['sesion']['Estilo'] == "Letras Grandes"){
+            include('metaLetrasGrandes.php');
+        }else if($_SESSION['sesion']['Estilo'] == "Modo Noche"){
+            include('metaModoNoche.php');
+        } 
+    }
+?>
   </head>
   <body>
   <?php 
     include('header.php');
-    ?>
+  ?>
     <main>
      
       <article class="formyera" id="albumsend">

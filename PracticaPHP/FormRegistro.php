@@ -1,18 +1,16 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <script src="Alexjs.js"></script>
-    <script src="codigoyera.js"></script>
-    <link rel="stylesheet" href="cssYera.css" title="Estilo básico" media="screen">  
-    <link rel="stylesheet" href="cssAlex.css" title="Estilo básico" media="screen">
-    <link rel="stylesheet" href="cssModoNoche.css" title="Modo noche" media="screen">
-    <link rel="stylesheet" href="cssImprimir.css" media="print">
-    <link rel="stylesheet" href="LetrasGrandes.css" title="LetrasGrandes" media="screen"> 
-    <link rel="stylesheet" href="Coontraste.css" title="Contraste" media="screen">
-    <link rel="stylesheet" href="ContrasteLetras.css" title="ContrasteLetras" media="screen"> 
-    <script src="https://kit.fontawesome.com/6b4ca2c1fd.js" crossorigin="anonymous"></script> 
-    <meta charset="UTF-8">
     <title>Formulario de Registro</title>
+    <?php 
+   if (isset($_COOKIE['sesion'])) {
+    header('Location:'.'index.php');
+}
+
+?>
+<?php 
+        include('meta.php');
+    ?>
   </head>
   <body>
   <?php 
