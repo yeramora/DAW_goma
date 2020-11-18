@@ -27,6 +27,30 @@
     include('header.php');
     ?>
     <main>
+    <?php 
+    if (isset($_COOKIE['recuerdame'])) {
+      echo "<div id='capafondo'>";
+      echo "<article>";
+      echo "<h2>Hola : ".$_SESSION['sesion']['usuario']."</h2>";
+      echo "<p>Ultima conexion:";
+      if(isset($_COOKIE['tiempo'])){
+        $cookie = json_decode($_COOKIE['tiempo'],true);
+        echo $cookie['mday'] . " de " . $cookie['month'] . " de " . $cookie['year'] . " a las " . $cookie['hours'] .":". $cookie['minutes'];
+        $date = json_encode(getdate());
+        setcookie('tiempo',$date,time() + 86400 * 90);
+
+    }else{
+        echo "Nunca"; //cookies individuales por ordenador o por usuario
+        $date = json_encode(getdate());
+        setcookie('tiempo',$date,time() + 86400 * 90);
+
+    }
+    echo "</p>";
+    echo "<button onclick='cerrarmodal();'> Aceptar </button>";
+    echo "</article>";
+    echo "</div>";
+    }
+    ?>
       <article id="artfotos">
         <h1>Las ultimas fotos</h1>
           <section>

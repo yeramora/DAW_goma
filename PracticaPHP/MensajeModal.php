@@ -4,8 +4,8 @@
     <title>Formulario de Busqueda</title>
     <?php 
     if (isset($_SESSION['sesion'])) {
-        header('Location:'.'index.php');
-    }
+      header('Location:'.'index_logged.php');
+  }
 ?>
 <?php 
         include('meta.php');

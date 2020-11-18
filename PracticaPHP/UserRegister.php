@@ -33,7 +33,6 @@
           <section id>
             <h1> Bienvenido 
               <?php
-                    
                     if (isset($_SESSION['sesion'])) {
                         echo $_SESSION['sesion']['usuario'];
                     }
@@ -55,7 +54,7 @@
                             setcookie('tiempo',$date,time() + 86400 * 90);
 
                         }else{
-                            echo "Nunca";
+                            echo "Nunca"; //cookies individuales por ordenador o por usuario
                             $date = json_encode(getdate());
                             setcookie('tiempo',$date,time() + 86400 * 90);
 

@@ -3,7 +3,16 @@
   <head>
     <title>Memories - Index</title>
     <?php 
-    session_start();
+      session_start();
+    if (isset($_COOKIE['recuerdame'])) {
+      $data = json_decode($_COOKIE['recuerdame'], true);
+      $_SESSION['sesion'] = $data;
+    }
+    if (isset($_SESSION['sesion'])) {
+      header('Location:'.'index_logged.php');
+  }
+
+
     if (isset($_SESSION['sesion'])) {
       if($_SESSION['sesion']['Estilo'] == "style"){
         include('meta.php');

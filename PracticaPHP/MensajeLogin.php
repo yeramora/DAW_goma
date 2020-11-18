@@ -4,7 +4,7 @@
     <title>Memories - Formulario de Login</title>
     <?php 
     if (isset($_SESSION['sesion'])) {
-        header('Location:'.'index.php');
+        header('Location:'.'index_logged.php');
     }
 ?>
 <?php 
@@ -16,10 +16,16 @@
     include('headersinlogear.php');
     ?>
     <main>
+    <?php 
+    if (isset($_SESSION['sesion']['recordar'])) {
+      echo $_SESSION['sesion']['recordar'];
+  }
+    ?>
         <form class="formyera" name="formulario" action="acceso.php" method = "post" onsubmit="return validateForm()">
           <h1>Inicia sesion</h1>
             <p><label for="username">Usuario:</label><input type="text" placeholder="usuario" id="username" name="username" ></p>
           <p><label for="password">Contraseña:</label><input type="password" placeholder="password" id="password"  name="password"></p>
+          <p><label for="recuerdame">Recuerdame</label><input type="checkbox"  id="recuerdame"  name="recuerdame"  ></p>
         <p  class="enviar"><input type="submit" value="Submit"></p>
         <a href="index.php">¿Has olvidado tu contraseña?</a>
         </form>

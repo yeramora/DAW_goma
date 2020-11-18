@@ -2,6 +2,7 @@
 
 $username = $_POST['username'];
 $password = $_POST['password'];
+$recordar = "";
 
 $usuarios = ['usuario1', 'usuario2', 'usuario3', 'usuario4', 'usuario5'];
 $passwords = ['usuario1', 'usuario2', 'usuario3', 'usuario4', 'usuario5'];
@@ -40,6 +41,7 @@ $datos = array(
 	"pass"    		 => $password,
 	"tiempo"  		 => getdate(),
 	"Estilo" 		 => $css,
+	"recordar"		 => $recordar,
 );
 
 
@@ -54,12 +56,19 @@ else{
 
 	// Comprobamos si esta marcada la casilla de recuerdame para añadir la cookie
 	if($_POST['recuerdame']=="on"){
+		setcookie("recuerdame", json_encode($datos), time() + 7776000);
+		//Specify time = 0 or blank , when you do so, the cookie will expire as the browser is closed. 
 		session_start();
+		
 		$_SESSION['sesion'] = $datos;
+		$_SESSION['sesion']['recordar'] = "true";
+		
 		
 	}else{
+		$recordar="false";
 		session_start();
 		$_SESSION['sesion'] = $datos;
+		$_SESSION['sesion']['recordar'] = "false";
 	}
-    header('Location: UserRegister.php');
+    header('Location: index_logged.php');
 }
