@@ -21,7 +21,7 @@ if($password == $passBD){
 
 
 
-$eleccion = 1;
+$eleccion = rand(1,5);
 $css;
 
 if($eleccion==1){
@@ -36,6 +36,8 @@ if($eleccion==1){
 	$css = "Modo Noche";
 }
 
+	
+	
 $datos = array(
 	"usuario" 		 => $username,
 	"pass"    		 => $password,
