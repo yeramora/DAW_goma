@@ -1,60 +1,41 @@
 <?php
 
-$username = $_POST['username'];
-$password = $_POST['password'];
+require("conexionBD.php");
+
+$username = mysqli_real_escape_string($conexion, $_POST['username']);
+$password = mysqli_real_escape_string($conexion, $_POST['password']);
 $recordar = "";
 
-$usuarios = ['usuario1', 'usuario2', 'usuario3', 'usuario4', 'usuario5'];
-$passwords = ['usuario1', 'usuario2', 'usuario3', 'usuario4', 'usuario5'];
+$sql = "SELECT * FROM USUARIOS WHERE NomUsuario='$username' and Clave='$password'";
+$resultados = $conexion->query($sql);
 
-$bd = array_combine($usuarios, $passwords);
-$flag = 0;
+if ($resultados->num_rows > 0) {
+	$datosUsu = $resultados->fetch_all(MYSQLI_ASSOC);
+	$eleccion = $datosUsu[0]['Estilo'];
 
-if (array_key_exists($username, $bd)) {
-    $flag = 1;
-    $passBD = $bd[$username];
-}
-
-if($password == $passBD){
-    $flag = 2;
-}
-
-
-
-$eleccion = rand(1,5);
-$css;
-
-if($eleccion==1){
-	$css = "style";
-}else if($eleccion==2){
-	$css = "Alto contraste";
-}else if($eleccion==3){
-	$css = "Contraste y Letras";
-}else if($eleccion==4){
-	$css = "Letras Grandes";
-}else if($eleccion==5){
-	$css = "Modo Noche";
-}
-
+	if($eleccion==1){
+		$css = "style";
+	}else if($eleccion==2){
+		$css = "Alto contraste";
+	}else if($eleccion==3){
+		$css = "Contraste y Letras";
+	}else if($eleccion==4){
+		$css = "Letras Grandes";
+	}else if($eleccion==5){
+		$css = "Modo Noche";
+	}
 	
-	
-$datos = array(
-	"usuario" 		 => $username,
-	"pass"    		 => $password,
-	"tiempo"  		 => getdate(),
-	"Estilo" 		 => $css,
-	"recordar"		 => $recordar,
-);
 
+	$datos = array(
+        "IdUsuario" => $datosUsu[0]['IdUsuario'],
+        "usuario" => $datosUsu[0]['NomUsuario'],
+        "pass" => $datosUsu[0]['Clave'],
+        "tiempo" => getdate(),
+		"Estilo" => $css, //$datosUsu[0]['Estilo'],
+		"recordar" => $recordar,
+    );
 
-
-
-
-
-if ($flag == 1 || $flag == 0){
-    header('Location: index.php?error');
-}
-else{
+// Comprobamos si esta marcada la casilla de recuerdame para añadir la cookie
 
 	// Comprobamos si esta marcada la casilla de recuerdame para añadir la cookie
 	if($_POST['recuerdame']=="on"){
@@ -73,4 +54,9 @@ else{
 		$_SESSION['sesion']['recordar'] = "false";
 	}
     header('Location: index_logged.php');
+
+}else{
+
+	header('Location: index.php?error');
 }
+

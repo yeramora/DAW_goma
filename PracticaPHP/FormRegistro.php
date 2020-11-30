@@ -46,17 +46,32 @@
             <option value="mujer">Mujer</option>
             <option value="otro">Otro</option>
           </select></p>
-  
+
+          <p><label class="label_blanco text_shadow">Estilo</label>
+                <select name="Estilo">
+                    <?php
+                    require("rellenarEstilos.php");
+
+                    ?>
+                </select>
+            </p>
+
           <p><label for="fechnac">Fecha de Nacimiento</label>
-          <input type="date" id="fechnac" name="correo" value="2018-07-22" min="1920-01-01"  placeholder="fecha"></p>
+          <input type="date" id="fechnac" name="fechnac" value="2018-07-22" min="1920-01-01"  placeholder="fecha"></p>
   
-          <p><label for="pais"  class="invisible">Pais de residencia:</label>
-          <input type="text" id="pais" name="pais"  placeholder="pais de residencia"></p>
-          <p><label for="ciudad"  class="invisible">Ciudad:</label>
-          <input type="text" id="ciudad" name="ciudad"  placeholder="ciudad"></p>
+          <p><label for="Pais">Pais de residencia:</label>
+          <select name="paises">
+                            <?php
+                            require("rellenarPaises.php");
+
+                            ?>
+
+                        </select></p>
+          <p><label for="Ciudad"  class="invisible">Ciudad:</label>
+          <input type="text" id="Ciudad" name="Ciudad"  placeholder="ciudad"></p>
   
-          <p><label for="foto">Foto perfil</label>
-          <input type="file" name="foto" id="foto" ></p>
+          <p><label for="Foto">Foto perfil</label>
+          <input type="file" name="Foto" id="Foto" ></p>
           
           <p class="enviar"><input type="submit" id="enviar" name="enviar">
           <input type="reset" id="borrar" name="Borrar"></p>
