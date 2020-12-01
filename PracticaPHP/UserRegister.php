@@ -33,9 +33,8 @@
           <section id>
             <h1> Bienvenido 
               <?php
-                    if (isset($_SESSION['sesion'])) {
-                        echo $_SESSION['sesion']['usuario'];
-                    }
+                    
+                   echo " $nombre";
                 ?>
                 </h1>
           <p>Info usuario lorem ipsum</p>

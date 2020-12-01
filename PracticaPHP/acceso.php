@@ -6,7 +6,7 @@ $username = mysqli_real_escape_string($conexion, $_POST['username']);
 $password = mysqli_real_escape_string($conexion, $_POST['password']);
 $recordar = "";
 
-$sql = "SELECT * FROM USUARIOS WHERE NomUsuario='$username' and Clave='$password'";
+$sql = "SELECT * FROM USUARIOS WHERE usuario='$username' and contra='$password'";
 $resultados = $conexion->query($sql);
 
 if ($resultados->num_rows > 0) {
