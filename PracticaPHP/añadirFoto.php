@@ -1,72 +1,60 @@
+<?php
+if (isset($_COOKIE['sesion'])) {
+    header('Location:' . 'index.php');
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <title>Mis álbumes | myAlbum</title>
+    <title>Añadir foto a álbum - Memories</title>
     <?php
-    session_start();
-    if (!isset($_SESSION['sesion'])) {
-        include('head.php');
-    } else {
-        if ($_SESSION['sesion']['Estilo'] == '1') {
-            include('head.php');
-        } else if ($_SESSION['sesion']['Estilo'] == '2') {
-            include('headAltoContraste.php');
-        }
-    }
+    include("eleccionEstilo.php");
     ?>
 </head>
 <body>
 <?php
 include('header.php');
 ?>
-<div>
+<main>
     <section>
-        <h2 class="white text_shadow">Añadir foto a álbum</h2>
-        <form action="respRegistro.php" method="post">
-            <label class="label_blanco text_shadow">Título de la foto</label>
-            <input type="text" name="usuario" placeholder="Vacaciones en Ibiza" required>
-            <br><br>
-            <label class="label_blanco text_shadow" for="usuario">Descripción</label>
-            <textarea rows="4" cols="80" name="descripcion" placeholder="Escribe tu informacion extra"></textarea>
-            <br><br>
-            <div class="row">
-                <div style="float:left; padding: 0 4% 0 0%;" class="col-6">
-                    <label>
-                        <label class="label_blanco text_shadow">Fecha</label>
-                        <input type="date" required>
-                </div>
-                <div style="float:left;" class="col-6">
-                    <br id="br_none">
-                    <label class="label_blanco text_shadow">País</label>
-                    <div class="select">
+        <h2>Añadir foto a álbum</h2>
+        <form action="resSubidaFoto.php" method="post" class="formyera">
+            <p><label class="invisible" for="titulo">Título de la foto</label>
+            <input type="text" name="titulo" placeholder="Título de la foto" required></p>
+            
+            <p><label class="invisible" for="descripcion">Descripción</label>
+            <textarea rows="4" cols="80" name="descripcion" placeholder="Descripción"></textarea></p>
+            
+            <p><label>
+                        <label class="label_blanco text_shadow" for="fecha">Fecha</label>
+                        <input type="date" name="fecha" required>
+                </p>
+                <p><label class="label_blanco text_shadow">País</label>
+                    <p class="select">
                         <select name="paises">
                             <?php
-                            require("rellenarPaises.php");
+                                require("rellenarPaises.php");
                             ?>
-                        </select></div>
-                </div>
-            </div>
-            <br>
-            <label class="label_blanco text_shadow">Texto alternativo</label>
-            <input type="text" name="alt" placeholder="" required>
-            <br>
-            <br>
-            <label class="label_blanco text_shadow" for="album">Album</label>
-            <div class="select">
+                        </select></p>
+            
+            <p><label class="invisible  " for="textoAlternativo">Texto alternativo</label>
+            <input type="text" name="textoAlternativo" placeholder="textoAlternativo" required></p>
+            
+            
+            <p><label class="label_blanco text_shadow" for="album">Album</label>
                 <select name="album">
                     <?php
                     require("rellenarAlbumes.php");
                     ?>
-                </select></div>
-            <br>
+                </select></p>
+            
             <label id="add-computer-button" for="fileupload" class="upload_file_btn">Sube tu foto
             </label>
-            <input id="fileupload" type="file" multiple="multiple" name="_photos" accept="image/*"
+            <input id="fileupload" required type="file" multiple="multiple" name="input_foto" accept="image/jpeg"
                    style="visibility: hidden">
             <button type="submit" style="cursor:pointer;">Añadir foto</button>
         </form>
     </section>
-</div>
-<footer class="footer"></footer>
+</main>
 </body>
 </html>

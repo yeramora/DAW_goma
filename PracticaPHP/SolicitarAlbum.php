@@ -20,7 +20,7 @@
         } 
     }
 ?>
-    <title>Memories LOGGED</title>
+    <title>Solicitar Album - Memories</title>
   </head>
   <body>
   <?php 
