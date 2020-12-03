@@ -468,69 +468,7 @@ ALTER TABLE `paises`
 ALTER TABLE `solicitudes`
   MODIFY `IdSolicitud` int(255) NOT NULL AUTO_INCREMENT;
 --
--- Base de datos: `dism`
---
-CREATE DATABASE IF NOT EXISTS `dism` DEFAULT CHARACTER SET utf8 COLLATE utf8_spanish2_ci;
-USE `dism`;
 
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `estaciones`
---
-
-CREATE TABLE `estaciones` (
-  `nombre` varchar(45) DEFAULT NULL,
-  `latitud` varchar(45) DEFAULT NULL,
-  `longitud` varchar(45) DEFAULT NULL,
-  `indicativo` varchar(45) DEFAULT NULL,
-  `provincia` varchar(45) DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `estaciones`
---
-
-INSERT INTO `estaciones` (`nombre`, `latitud`, `longitud`, `indicativo`, `provincia`) VALUES
-('A CORUNYA', '432157N', '082517W', '1387', 'A CORUNYA'),
-('CALAMOCHA', '405534N', '011736W', '9381I', 'TERUEL'),
-('CASTELLFORT', '402955N', '001112W', '9563X', 'Comunidad Valenciana');
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `metereologia`
---
-
-CREATE TABLE `metereologia` (
-  `nombre` varchar(45) DEFAULT NULL,
-  `velviento` varchar(45) DEFAULT NULL,
-  `humedadmax` varchar(45) DEFAULT NULL,
-  `humedadmin` varchar(45) DEFAULT NULL,
-  `temperaturamax` varchar(45) DEFAULT NULL,
-  `temperaturamin` varchar(45) DEFAULT NULL,
-  `icono` varchar(45) DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `metereologia`
---
-
-INSERT INTO `metereologia` (`nombre`, `velviento`, `humedadmax`, `humedadmin`, `temperaturamax`, `temperaturamin`, `icono`) VALUES
-('Albacete', '3', '20', '2', '26', '18', '1'),
-('Burgos', '10', '44', '4', '28', '17', '2'),
-('Elche', '15', '84', '25', '23', '12', '2'),
-('Alicante', '10', '24', '14', '25', '17', '1'),
-('Alcoy', '3', '24', '14', '25', '17', '1'),
-('Denia', '4', '22', '11', '21', '12', '1'),
-('Orihuela', '5', '26', '12', '21', '17', '1'),
-('San Vicente', '0', '14', '7', '25', '17', '1');
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `municipios`
---
 
 CREATE DATABASE IF NOT EXISTS `phpmyadmin` DEFAULT CHARACTER SET utf8 COLLATE utf8_bin;
 USE `phpmyadmin`;

@@ -60,15 +60,15 @@
         <?php
         $hasta =  date('Y-m-d H:i:s');
         require("conexionBD.php");
-        $sql = "SELECT * FROM fotos WHERE Titulo LIKE '%$titulo%' AND Fecha BETWEEN '$fechproduccion' AND '$hasta' AND Pais = '$paisproduccion'";
+        $sql = "SELECT * FROM fotos WHERE Titulo LIKE '%$titulo%' AND Fecha BETWEEN '%$fechproduccion%' AND '$hasta' AND Pais LIKE '%$paisproduccion%'";
 
           $resultados = $conexion->query($sql);
-
+          error_reporting(0);
           if (mysqli_num_rows($resultados) == 0) {
               echo "<p class='white text_shadow'>No se encontró ninguna foto con ese filtro</p>";
           }
-
-          while ($fila = $resultados->fetch_assoc()) {
+          else{
+            while ($fila = $resultados->fetch_assoc()) {
 
               $id = $fila['IdFoto'];
               $fichero = $fila['Fichero'];
@@ -103,6 +103,9 @@
               echo "</section>";
               echo "</article>";
           }
+
+          }
+         
         ?>
         <h1 class="invisible">resultadobusqueda</h1>
      <!--   <section>
