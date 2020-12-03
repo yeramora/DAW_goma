@@ -62,9 +62,11 @@
       <article id="infogeneral">
       <article id="infouser">
       <?php
+      $newdate = date("d-m-Y", strtotime($fechaincorporacion));
                 echo "<h2>Perfil de ' $nombre'</h2>
                   <img src='$imagen' alt='icono' width='300' height='300'>
-                  <p><b>Usuario desde: </b>'$fechaincorporacion'</p>
+                  
+                  <p><b>Usuario desde: </b>'$newdate'</p>
 
                   <h3>MIS ALBUMES<h3>
                   

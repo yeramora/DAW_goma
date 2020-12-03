@@ -75,7 +75,7 @@ while ($fila = $resultados->fetch_assoc()) {
     $pais = $conexion->query($sqlPais);
     $paisNom = $pais->fetch_assoc();
     $paisNom2 = $paisNom['nombre'];
-    
-    echo "<a href='fotodetalle.php?id=$id'><img src='img/$fichero' width='300' height='300'></a><h2>$titulo</h2><p>$descripcion</p><p> Pais:$paisNom2</p><p>Fecha: $fecha</p>";
+    $newdate = date("d-m-Y", strtotime($fecha));
+    echo "<a href='fotodetalle.php?id=$id'><img src='img/$fichero' width='300' height='300'></a><h2>$titulo</h2><p>$descripcion</p><p> Pais:$paisNom2</p><p>Fecha: $newdate</p>";
 }
 ?>

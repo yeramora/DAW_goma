@@ -29,17 +29,31 @@
     <main id="mainuser">
       <article id="infogeneral">
         <h1 class="invisible">Infogeneral</h1>
-          <img src="img.png" alt="icono" width="300" height="300">
-          <section id>
-            <h1> Bienvenido 
+          <?php
+           require("conexionBD.php");
+           $id = mysqli_real_escape_string($conexion, $_SESSION['sesion']['IdUsuario']);
+           $sql = "SELECT * FROM USUARIOS WHERE IdUsuario='$id'";
+           $resultado = $conexion->query($sql);
+           $resultado_fetch = $resultado->fetch_assoc();
+           $perfil = $resultado_fetch['Foto'];
+           $registro = $resultado_fetch['FRegistro'];
+           $nombre = $resultado_fetch['usuario'];
+           $email = $resultado_fetch['correo'];
+           $sexo = $resultado_fetch['sexo'];
+           $fecha = $resultado_fetch['fechnac'];
+           $estilo = $resultado_fetch['Estilo'];
+           $ciudad = $resultado_fetch['Ciudad'];
+           $pais = $resultado_fetch['Pais'];
+            echo "<img src='img/$perfil' alt='tu foto de perfil' width='300' height='300'>";
+          ?>
+          <section>
+            
               <?php
-                    
-                   echo " $nombre";
+                  echo "<h1>Bienvenido";
+                  echo " $nombre</h1>";
+                  $newdate = date("d-m-Y", strtotime($registro));
+                  echo "<p>Te uniste el $newdate </p>";
                 ?>
-                </h1>
-          <p>Info usuario lorem ipsum</p>
-          <p>Info usuario lorem ipsum</p>
-          <p>Info usuario lorem ipsum</p>
           </section>
           <p class="white text_shadow" style="font-size: .7em;"> Última conexión: 
                 <?php 
@@ -89,20 +103,6 @@
               
                 <p><label for="usuario" class="invisible">Usuario:</label >
                 <?php
-                        require("conexionBD.php");
-                        $id = mysqli_real_escape_string($conexion, $_SESSION['sesion']['IdUsuario']);
-                        $sql = "SELECT * FROM USUARIOS WHERE IdUsuario='$id'";
-                        $resultado = $conexion->query($sql);
-                        $resultado_fetch = $resultado->fetch_assoc();
-
-                        $nombre = $resultado_fetch['usuario'];
-                        $email = $resultado_fetch['correo'];
-                        $sexo = $resultado_fetch['sexo'];
-                        $fecha = $resultado_fetch['fechnac'];
-                        $estilo = $resultado_fetch['Estilo'];
-                        $ciudad = $resultado_fetch['Ciudad'];
-                        $pais = $resultado_fetch['Pais'];
-
                         echo "<input type='text' name='usuario' placeholder='$nombre' required>";
                         ?>
                 

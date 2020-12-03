@@ -35,22 +35,22 @@
         <?php
         if(isset($_GET['titulo'])){
           $titulo = $_GET['titulo'];
-          echo "<p style='color:black;'>Nombre: '.$titulo.'</p> ";
+          echo "<p style='color:black;'>Nombre: '$titulo'</p> ";
         }else{
-
+          $titulo = "";
         }
 
         if(isset($_GET['fechprod'])){
           $fechproduccion = $_GET['fechprod'];
-          echo "<p style='color:black;'>Desde: '.$fechproduccion.'</p>";
+          echo "<p style='color:black;'>Desde: '$fechproduccion'</p>";
         }else{
-
+          $fechproduccion = "";
         }
         if(isset($_GET['paises'])){
           $paisproduccion = $_GET['paises'];
-          echo "<p style='color:black;'>País: '.$paisproduccion.'</p>";
+          echo "<p style='color:black;'>País: '$paisproduccion'</p>";
         }else{
-
+          $paisproduccion = "";
         }
         ?>
         
@@ -60,6 +60,7 @@
         <?php
         $hasta =  date('Y-m-d H:i:s');
         require("conexionBD.php");
+        
         $sql = "SELECT * FROM fotos WHERE Titulo LIKE '%$titulo%' AND Fecha BETWEEN '%$fechproduccion%' AND '$hasta' AND Pais LIKE '%$paisproduccion%'";
 
           $resultados = $conexion->query($sql);

@@ -45,6 +45,7 @@ while ($fila = $resultados->fetch_assoc()) {
 
     $fecha_correcta = substr($mes_format, 0, 3);
     $url = "img/" . $fichero;
+    $newdate = date("d-m-Y", strtotime($fecha));
 }
   ?>
     <main>
@@ -56,7 +57,7 @@ while ($fila = $resultados->fetch_assoc()) {
         //echo "<p><time datetime=2020>$fecha_correcta</time></p>";
         echo "<p>Descripción: $descrip</p>";
         echo "<p>Pais: $pais_fetch[nombre]</p>";
-        echo "<p>Fecha: $fecha</p>";
+        echo "<p>Fecha: $newdate</p>";
         echo "<p>Album: <a href='veralbumpublica.php?album=$album_fetch[IdAlbum]'> $album_fetch[Titulo]</a></p>";
         echo "<p>Usuario: <a href='perfilUsuario.php?id=$usuario_fetch[IdUsuario]'> $usuario_fetch[usuario]</a></p>";
       ?>
