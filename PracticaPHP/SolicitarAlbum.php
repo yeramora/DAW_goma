@@ -158,10 +158,10 @@
 
           <p><label for="album">Solicitar album*:</label>
             <select id="album" name="album" required>
-              <option value="">--</option>
-              <option value="opt1">album1</option>
-              <option value="opt2">album2</option>
-              <option value="opt3">album3</option>
+            <?php
+                        require("rellenarAlbumes.php");
+
+                        ?>
             </select>
           </p>
 

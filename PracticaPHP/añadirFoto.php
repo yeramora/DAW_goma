@@ -50,8 +50,7 @@ include('header.php');
             
             <label id="add-computer-button" for="fileupload" class="upload_file_btn">Sube tu foto
             </label>
-            <input id="fileupload" required type="file" multiple="multiple" name="input_foto" accept="image/jpeg"
-                   style="visibility: hidden">
+            <input id="fileupload" required type="file" multiple="multiple" name="input_foto" accept="image/jpeg">
             <button type="submit" style="cursor:pointer;">Añadir foto</button>
         </form>
     </section>

@@ -17,8 +17,9 @@ include('header.php');
         <h2>Subida de imagen</h2>
 
         <?php
+        //error_reporting(0);
         	include("conexionBD.php");
-            $tmp_name = $_FILES["input_foto"]["tmp_name"];
+            $tmp_name = $_FILES["input_foto"]["tmp_name"]; //ERROR FUTURO como no pilla el input no se sube bien a la bbdd
             $name_img = basename($_FILES["input_foto"]["name"]);
             $fichero_subido = $name_img . ".jpg";
             move_uploaded_file($tmp_name, "img/$fichero_subido");
@@ -31,7 +32,7 @@ include('header.php');
 	        $pais = mysqli_escape_string($conexion,$_POST['paises']);
 	        $album = mysqli_escape_string($conexion,$_POST['album']);
 	        $textoAlternativo = mysqli_escape_string($conexion,$_POST['textoAlternativo']);
-	        $fregistro = date('H:i:s');
+	        $fregistro = date('Y-m-d H:i:s');
 
 	        echo "<p><h3>Titulo: </h3>" . $titulo . "</p>";
             echo "<p><h3>Descripcion: </h3>" . $descripcion . "</p>";
@@ -43,13 +44,13 @@ include('header.php');
             echo "<p><h3>Fecha Registro: </h3>" . $fregistro . "</p>";
 
 
-	        $sql = "INSERT INTO fotos(IdFoto,Titulo,Descripcion,Fecha,Pais,Album,Fichero,Alternativo,FRegistro) VALUES('NULL','$titulo','$descripcion','$fecha','$pais','$album','i1.jpeg','$textoAlternativo','$fregistro')";
+	        $sql = "INSERT INTO fotos(IdFoto,Titulo,Descripcion,Fecha,Pais,Album,Fichero,Alternativo,FRegistro) VALUES('NULL','$titulo','$descripcion','$fecha','$pais','$album',' $fichero_subido','$textoAlternativo','$fregistro')";
 
 	        if($conexion->query($sql)){
 	        	echo "<h2 class='white text_shadow'> Introducida con éxito</h3>";
 	        }
 
-
+            echo "<p><img src='$fichero_subido'></img></p>";
 
         
 

@@ -26,8 +26,12 @@
   <?php 
     include('header.php');
   ?>
-<h2 class="white">Mis álbumes</h2>
-<main class="main">
+<main id="mainuser">
+    <article id="infouser">
+    
+    <a href="misalbumes.php">Ver mis albumes</a> 
+    <a href="misfotos.php">Ver mis fotos</a>  
+    <section>
     <?php
     require("conexionBD.php");
     $id_user = mysqli_real_escape_string($conexion, $_SESSION['sesion']['IdUsuario']);
@@ -40,10 +44,11 @@
         $titulo_album = $fila['Titulo'];
         $descrip_album = $fila['Descripcion'];
         if ($par % 2 != 0) {
-            echo "<section class=\"info1\">
-                <a class='info-link' href='verAlbum.php?album=$id_album'> <h2>$titulo_album</h2></a>
-                <p>$descrip_album</p></section>";
+            echo "<h2>
+                <a  class='extra' href='veralbum.php?album=$id_album'>$titulo_album</a></h2>
+                <p>$descrip_album</p>";
         }
+        /*   
         $sql = "SELECT Fichero FROM FOTOS WHERE Album='$id_album' limit 3";
         $rest_fotos_albumes = $conexion->query($sql);
         while ($row = mysqli_fetch_assoc($rest_fotos_albumes)) {
@@ -55,15 +60,19 @@
                 $flag = 0;
             }
             $flag++;
-        }
+        } */
         if ($par % 2 == 0) {
-            echo "<section class=\"info2\">
-                <a class='info-link' href='verAlbum.php?album=$id_album'> <h2>$titulo_album</h2></a>
-                <p>$descrip_album</p></section>";
+            echo "<h2>
+            <a  class='extra' href='veralbum.php?album=$id_album'>$titulo_album</a></h2>
+                <p>$descrip_album</p>";
         }
-        $par++;
+        $par++; 
     }
-    ?></main>
+    ?>  
+    </section>
+    
+</article>    
+</main>
 <footer>
     <h3><a href="acerca.php">Acerca</a></h3>
       Copyright &copy; DAW <time datetime="2020">2020</time>

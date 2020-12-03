@@ -39,11 +39,23 @@
         <h1>Las ultimas fotos</h1>
           <section>
             <h2 class="invisible">section</h2>
-          <a href="FotoDetalle.php?id=1"><img class="diagonal" src="img.png" alt="icono" width="400" height="600"></a>
-          <a href="FotoDetalle.php?id=2"><img class="diagonal" src="img.png" alt="icono" width="400" height="600"></a>
-          <a href="FotoDetalle.php?id=1"><img class="diagonal" src="img.png" alt="icono" width="400" height="600"></a>
-          <a href="FotoDetalle.php?id=2"><img class="diagonal" src="img.png" alt="icono" width="400" height="600"></a>
-          <a href="FotoDetalle.php?id=1"><img class="diagonal" src="img.png" alt="icono" width="400" height="600"></a>
+            <?php
+        require("conexionBD.php");
+
+        $sql = "SELECT * FROM FOTOS ORDER BY FRegistro DESC limit 5";
+        $resultados = $conexion->query($sql);
+
+        if ($conexion->errno) {
+            echo "Problemas al establecer conexion";
+        }
+
+        while ($fila = $resultados->fetch_assoc()) {
+            $id = $fila['IdFoto'];
+            $fichero = $fila['Fichero'];
+            $alter = $fila['Alternativo'];
+            echo " <a href='FotoDetalle.php?id=$id'><img class='diagonal' src='img/$fichero' alt='$alter' width='400' height='600'></a>";
+        }
+        ?>
           </section>
           <article id="busquedalogin">
             <h1>Busqueda</h1>

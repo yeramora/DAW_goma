@@ -21,11 +21,11 @@ while ($fila = $resultados->fetch_assoc()) {
     $titulo = $fila['Titulo'];
 
     $id_album = mysqli_real_escape_string($conexion, $fila['Album']);
-    $album_row = $conexion->query("SELECT Titulo,Usuario FROM albumes WHERE IdAlbum = '$id_album'");
+    $album_row = $conexion->query("SELECT * FROM albumes WHERE IdAlbum = '$id_album'");
     $album_fetch = $album_row->fetch_assoc();
 
     $id_usuario = mysqli_real_escape_string($conexion, $album_fetch['Usuario']);
-    $usuario_row = $conexion->query("SELECT NomUsuario FROM usuarios WHERE IdUsuario = '$id_usuario'");
+    $usuario_row = $conexion->query("SELECT * FROM usuarios WHERE IdUsuario = '$id_usuario'");
     $usuario_fetch = $usuario_row->fetch_assoc();
 
     $id_pais = mysqli_real_escape_string($conexion, $fila['Pais']);
@@ -52,12 +52,13 @@ while ($fila = $resultados->fetch_assoc()) {
       <article class="formyera" id="albumsend">
       <?php
         echo "<h1>$titulo</h1>";
-        echo "<p><a href=FotoDetalle.php><img src='$url' alt='nombre' width=300 height=300> </a></p>";
-        echo "<p><time datetime=2020>$fecha_correcta</time></p>";
-        echo "<p>Nombre: $descrip</p>";
+        echo "<p><a href=FotoDetalle.php?id=$id_foto><img src='$url' alt='nombre' width=300 height=300> </a></p>";
+        //echo "<p><time datetime=2020>$fecha_correcta</time></p>";
+        echo "<p>Descripción: $descrip</p>";
         echo "<p>Pais: $pais_fetch[nombre]</p>";
-        echo "<p>Album: $album_fetch[Titulo]</p>";
-        echo "<p>Usuario: $usuario_fetch[NomUsuario]</p>";
+        echo "<p>Fecha: $fecha</p>";
+        echo "<p>Album: <a href='veralbumpublica.php?album=$album_fetch[IdAlbum]'> $album_fetch[Titulo]</a></p>";
+        echo "<p>Usuario: <a href='perfilUsuario.php?id=$usuario_fetch[IdUsuario]'> $usuario_fetch[usuario]</a></p>";
       ?>
       </article>
     </main>

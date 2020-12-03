@@ -6,7 +6,7 @@
 -- Tiempo de generación: 30-11-2020 a las 12:55:14
 -- Versión del servidor: 10.4.14-MariaDB
 -- Versión de PHP: 7.2.34
-
+  
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
@@ -83,7 +83,7 @@ CREATE TABLE `fotos` (
   `Album` int(100) NOT NULL,
   `Fichero` varchar(3000) COLLATE utf8_spanish_ci NOT NULL,
   `Alternativo` varchar(200) COLLATE utf8_spanish_ci NOT NULL,
-  `FRegistro` time NOT NULL
+  `FRegistro` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
@@ -91,12 +91,12 @@ CREATE TABLE `fotos` (
 --
 
 INSERT INTO `fotos` (`IdFoto`, `Titulo`, `Descripcion`, `Fecha`, `Pais`, `Album`, `Fichero`, `Alternativo`, `FRegistro`) VALUES
-(1, 'foto prueba', 'descripcion de prueba', '2018-11-07', 1, 1, 'i1.jpeg', 'alternativo de ejemplo', '16:00:00'),
-(2, 'foto prueba 2', 'descripcion prueba 2', '2018-09-23', 2, 1, 'i2.jpeg', 'texto alternativo 2', '19:29:00'),
-(3, 'foto prueba 3', 'descripcion prueba 3', '2018-11-23', 2, 1, 'i3.jpeg', 'texto alternativo 3', '19:29:00'),
-(4, 'foto prueba 4', 'descripcion prueba 4', '2018-11-12', 1, 2, 'i4.jpeg', 'texto alternativo 4', '00:08:00'),
-(5, 'foto prueba 5', 'descripcion prueba 5', '2018-11-12', 1, 2, 'i5.jpeg', 'texto alternativo 5', '00:08:00'),
-(6, 'foto prueba 6', 'descripcion prueba 6', '2018-11-22', 2, 1, 'i6.jpeg', 'texto alternativo foto 6', '09:11:20'),
+(1, 'foto prueba', 'descripcion de prueba', '2018-11-07', 1, 1, 'i1.jpeg', 'alternativo de ejemplo', '2018-11-07'),
+(2, 'foto prueba 2', 'descripcion prueba 2', '2018-09-23', 2, 1, 'i2.jpeg', 'texto alternativo 2', '2018-09-23'),
+(3, 'foto prueba 3', 'descripcion prueba 3', '2018-11-23', 2, 1, 'i3.jpeg', 'texto alternativo 3', '2018-11-23'),
+(4, 'foto prueba 4', 'descripcion prueba 4', '2018-11-12', 1, 2, 'i4.jpeg', 'texto alternativo 4', '2018-11-12'),
+(5, 'foto prueba 5', 'descripcion prueba 5', '2018-11-12', 1, 2, 'i5.jpeg', 'texto alternativo 5', '2018-11-12'),
+(6, 'foto prueba 6', 'descripcion prueba 6', '2018-11-22', 2, 1, 'i6.jpeg', 'texto alternativo foto 6', '2018-11-22'),
 (7, 'foto prueba 7', 'descripcion prueba 7', '2018-11-22', 2, 2, 'i18.jpeg', 'texto alternativo foto 7', '09:11:20');
 
 -- --------------------------------------------------------
@@ -376,7 +376,7 @@ CREATE TABLE `solicitudes` (
   `Resolucion` int(255) NOT NULL,
   `Fecha` date NOT NULL,
   `IColor` tinyint(1) NOT NULL,
-  `FRegistro` time NOT NULL,
+  `FRegistro` date NOT NULL,
   `Coste` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
@@ -396,7 +396,7 @@ CREATE TABLE `usuarios` (
   `Ciudad` varchar(100) COLLATE utf8_spanish_ci NOT NULL,
   `Pais` int(100) NOT NULL,
   `Foto` varchar(300) COLLATE utf8_spanish_ci DEFAULT NULL,
-  `FRegistro` time NOT NULL,
+  `FRegistro` date NOT NULL,
   `Estilo` int(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
@@ -405,8 +405,8 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`IdUsuario`, `usuario`, `contra`, `correo`, `sexo`, `fechnac`, `Ciudad`, `Pais`, `Foto`, `FRegistro`, `Estilo`) VALUES
-(1, 'usuario1', 'usuario1', 'usuario1@gmail.com', 3, '2018-11-01', 'Alicante', 1, 'foto1.png', '12:07:00', 1),
-(2, 'usuario2', 'usuario2', 'usuario2@gmail.com', 1, '2018-11-02', 'Zaragoza', 2, 'foto2.png', '12:07:00', 2);
+(1, 'usuario1', 'usuario1', 'usuario1@gmail.com', 3, '2018-11-01', 'Alicante', 1, 'foto1.png', '2018-11-01', 1),
+(2, 'usuario2', 'usuario2', 'usuario2@gmail.com', 1, '2018-11-02', 'Zaragoza', 2, 'foto2.png', '2018-11-02', 2);
 
 --
 -- Índices para tablas volcadas
@@ -532,29 +532,6 @@ INSERT INTO `metereologia` (`nombre`, `velviento`, `humedadmax`, `humedadmin`, `
 -- Estructura de tabla para la tabla `municipios`
 --
 
-CREATE TABLE `municipios` (
-  `nombre` varchar(45) DEFAULT NULL,
-  `altitud` varchar(45) DEFAULT NULL,
-  `latitud` varchar(45) DEFAULT NULL,
-  `longitud` varchar(45) DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `municipios`
---
-
-INSERT INTO `municipios` (`nombre`, `altitud`, `latitud`, `longitud`) VALUES
-('Albacete', '686', '38 59 45.169908', '-1 51 20.69082'),
-('Burgos', '856', '42 20 28.068144', '-3 42 15.11298'),
-('Elda', '395', '38 28 43.640184', '-0 47 45.997656'),
-('Alicante', '5', '38 20 43.75338', '-0 28 59.45952'),
-('Cartagena', '67', '37 36 0.624312', '-0 58 55.577784'),
-('Elche', '82', '38 16 2.699832', '-0 41 51.920916'),
-('Campello', '26', '38 25 39.170064', '-0 24 3.114324'),
-('Torrevieja', '7', '37 58 39.931428', '-0 40 58.893888');
---
--- Base de datos: `phpmyadmin`
---
 CREATE DATABASE IF NOT EXISTS `phpmyadmin` DEFAULT CHARACTER SET utf8 COLLATE utf8_bin;
 USE `phpmyadmin`;
 

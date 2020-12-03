@@ -46,18 +46,66 @@
         }else{
 
         }
-        if(isset($_GET['paisprod'])){
-          $paisproduccion = $_GET['paisprod'];
+        if(isset($_GET['paises'])){
+          $paisproduccion = $_GET['paises'];
           echo "<p style='color:black;'>País: '.$paisproduccion.'</p>";
         }else{
 
         }
         ?>
+        
     </section>
-      <article id="busquedarow">
+        
+      <h1 class="invisible">resultadobusqueda</h1>
+        <?php
+        $hasta =  date('Y-m-d H:i:s');
+        require("conexionBD.php");
+        $sql = "SELECT * FROM fotos WHERE Titulo LIKE '%$titulo%' AND Fecha BETWEEN '$fechproduccion' AND '$hasta' AND Pais = '$paisproduccion'";
 
+          $resultados = $conexion->query($sql);
+
+          if (mysqli_num_rows($resultados) == 0) {
+              echo "<p class='white text_shadow'>No se encontró ninguna foto con ese filtro</p>";
+          }
+
+          while ($fila = $resultados->fetch_assoc()) {
+
+              $id = $fila['IdFoto'];
+              $fichero = $fila['Fichero'];
+              $titulo = $fila['Titulo'];
+              $descripcion = $fila['Descripcion'];
+              $album = $fila['Album'];
+              $alternativo = $fila['Alternativo'];
+              $paisBuscar = mysqli_real_escape_string($conexion, $fila['Pais']);
+              $sqlPais = "SELECT * FROM PAISES WHERE id = '$paisBuscar'";
+              $pais = $conexion->query($sqlPais);
+              $fecha = $fila['Fecha'];
+              $paisNom = $pais->fetch_assoc();
+              $paisNom2 = $paisNom['nombre'];
+              $sqlusu = "SELECT * FROM albumes a WHERE a.IdAlbum = '$album'";
+              $albumes = $conexion->query($sqlusu);
+              $albuminfo = $albumes->fetch_assoc();
+              $albumtitle = $albuminfo['Titulo'];
+              $idusu = $albuminfo['Usuario'];
+              
+
+              echo "<article id='busquedarow'>";
+              echo "<section>";
+              echo "<a href='fotoDetalle.php?foto=$id'><img src='img/$fichero' alt='$alternativo' width='300' height='300'></a>";
+              echo " <a href='perfilUsuario.php?id=$idusu'><i class='fas fa-user' aria-hidden='true'>Usuario</i></a>";
+              echo " <a href='veralbumpublica.php?album=$album'><i class=''fas fa-user'' aria-hidden='true'>Album $albumtitle</i></a>";
+              echo "</section>";
+              echo "<section>";
+              echo "<h1>$titulo</h1>";
+              echo "<p><time datetime='2020'>$fecha</time></p>";
+              echo "<p>$paisNom2</p>";
+              echo "<p>$descripcion</p>";
+              echo "</section>";
+              echo "</article>";
+          }
+        ?>
         <h1 class="invisible">resultadobusqueda</h1>
-        <section>
+     <!--   <section>
           <a href="FotoDetalle.php?id=1"><img src="img.png" alt="icono" width="300" height="200"></a>
           <a href="user.php"><i class="fas fa-user" aria-hidden="true">Usuario</i></a>
             <a href="album.php"><i class="fas fa-images" aria-hidden="true">NombreAlbum</i></a>
@@ -80,7 +128,7 @@
           <h1>Titulo foto</h1>
           <p><time datetime="2020">28/09/2020</time></p>
           <p>Pais: España</p>
-        </section>
+        </section> --->
     </main>
     <footer>
       <h3><a href="acerca.php">Acerca</a></h3>

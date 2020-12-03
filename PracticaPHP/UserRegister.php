@@ -66,12 +66,14 @@
       </article>
       <article id="infouser">
         <h1 class="invisible">Mi cuenta</h1>
-        <button value="borrar cuenta"><a href= "misalbumes.php">Mis albums</a></button>
-        <button value="borrar cuenta">Mi perfil</button>
-          <p>esta pagina solo muestra o los albums o el perfil,cambiando entre ambos al pulsarlos</p>
+         <!--<button href= "misalbumes.php"><a href= "misalbumes.php">Mis albums</a></button>
+        <button>Mi perfil</button>-->
+          <a href="misalbumes.php">Mis albumes</a>
+          <a href="misalbumes.php">Mi perfil</a>
+          <a href="añadirfoto.php">Añadir foto</a>
           <a href="crearAlbum.php">Crear album</a>
           <a href="SolicitarAlbum.php">Solicitar&nbsp;album</a> 
-          <fieldset class="row">
+         <!-- <fieldset class="row">
             <legend>Al pulsar en mis albums</legend>
             <img src="img.png" alt="icono" width="300" height="300">
             <img src="img.png" alt="icono" width="300" height="300">
@@ -79,7 +81,7 @@
             <img src="img.png" alt="icono" width="300" height="300">
             <img src="img.png" alt="icono" width="300" height="300">
             <img src="img.png" alt="icono" width="300" height="300">
-          </fieldset>
+          </fieldset> -->
           <fieldset>
             <legend>Al pulsar en mi perfil</legend>
             <form action="RespRegistroNuevoUser.php" method = "post" class="formyera">
