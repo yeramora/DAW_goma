@@ -10,9 +10,9 @@
     }
     if (isset($_SESSION['sesion'])) {
       header('Location:'.'index_logged.php');
+  } else {
+    include('meta.php');
   }
-
-  include("eleccionEstilo.php");
 
 ?>
   </head>

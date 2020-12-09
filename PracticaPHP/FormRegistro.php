@@ -25,16 +25,16 @@
             ?>
         </h2>
         
-      <form name="registroform" action="respRegistro.php" method= "post" class="formyera"  onsubmit="return validaformulario()">
+      <form name="registroform" action="respRegistro.php" method= "post" class="formyera"  >
         <h1>Registro</h1>
           <p><label for="usuario" class="invisible">Usuario:</label>
-          <input type="text" id="usuario" name="usuario" placeholder="Usuario" onkeypress="return (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122) || (event.charCode >= 48 && event.charCode <= 57)" /></p>
+          <input type="text" id="usuario" name="usuario" placeholder="Usuario"/></p>
           
           <p><label for="contra" class="invisible">Contraseña:</label>
-          <input type="password" id="contra" name="contra"  placeholder="contraseña" onkeypress="return (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122) || (event.charCode >= 48 && event.charCode <= 57)"> <span id = "message" style="color:red"> </span></p>
+          <input type="password" id="contra" name="contra"  placeholder="contraseña"></p>
           
           <p><label for="repcontraseña" class="invisible">Repetir Contraseña:</label>
-          <input type="password" id="repcontraseña" name="repcontraseña"  placeholder="repetir contraseña"> <span id = "messageconx" style="color:red"> </span> <span id = "messagecon" style="color:green"> </span></p>
+          <input type="password" id="repcontraseña" name="repcontraseña"  placeholder="repetir contraseña"></p>
           
           <p><label for="correo" class="invisible">Correo:</label>
           <input type="email" id="correo" name="correo"  placeholder="correo"></p>
@@ -71,7 +71,7 @@
           <input type="text" id="Ciudad" name="Ciudad"  placeholder="ciudad"></p>
   
           <p><label for="Foto">Foto perfil</label>
-          <input type="file" name="Foto" id="Foto" ></p>
+          <input type="file" name="Foto" id="Foto"  multiple="multiple"></p>
           
           <p class="enviar"><input type="submit" id="enviar" name="enviar">
           <input type="reset" id="borrar" name="Borrar"></p>

@@ -3,20 +3,60 @@
   <head>
     <title>Memories-RespuestaRegistro</title>
     <?php
-    include("eleccionEstilo.php");
+    include('meta.php');
     ?>
   </head>
   <body>
   <?php 
-    include('header.php');
+    include('headersinlogear.php');
     ?>
     <main>
     <section class="col-4 margin_auto padding20">
-        <br><br>
-        <h2 class="white text_shadow">Registro Satisfactorio</h2>
-        <br><br>
-
         <?php
+
+            if (isset($_GET['error'])) {
+
+              if ($_GET['error'] == 'user') {
+                  echo "<p>El usuario no tiene un formato válido</p>";
+              }
+              if ($_GET['error'] == 'pass') {
+                  echo "<p>La contraseña no tiene un formato válido</p>";
+              }
+              if ($_GET['error'] == 'pass_repeat') {
+                  echo "<p>Las contraseñas no coinciden</p>";
+              }
+              if ($_GET['error'] == 'email') {
+                  echo "<p>El email no tiene un formato válido</p>";
+              }
+              if ($_GET['error'] == 'sexo') {
+                echo "<p>El genero no tiene un formato válido</p>";
+              }
+              if ($_GET['error'] == 'fechanac') {
+                echo "<p>La fecha de nacimiento no tiene un formato válido</p>";
+              }
+              echo "<a href='FormRegistro.php'>Volver al registro</p>";
+            }
+            else{
+              
+              include("FiltrarDatos.php");
+              if($datosCorrectos){
+                $sql = "INSERT INTO usuarios (usuario, contra, correo, sexo, fechnac, Ciudad, Pais, Foto,FRegistro, Estilo)
+                VALUES ('$esc_usuario', '$esc_pass', '$esc_email', '$esc_sexo', '$esc_fechaN', '$esc_ciudad', '$esc_pais', '$fichero_subido', '$esc_fechaR', '$esc_estilo')";
+                }
+                if($conexion->query($sql) === TRUE){
+                  echo "<h2>Registro Satisfactorio</h2>";
+                echo "<p style='color:white;'>Usuario: " . $usuario . "</p>";
+                echo "<p style='color:white;'>Password: " . $pass . "</p>";
+                echo "<p style='color:white;'>Email: " . $email . "</p>";
+                echo "<p style='color:white;'>Ciudad: " . $ciudad . "</p>";
+                echo "<p style='color:white;'>Pais: " . $pais . "</p>";
+                echo "<p style='color:white;'>Sexo: " . $sexo . "</p>";
+                echo "<p style='color:white;'>Estilo: " . $estilo . "</p>";
+                echo "<p style='color:white;'>Fecha: " . $fechaN . "</p>";
+                echo "<p style='color:white;'>Foto: " . $fichero_subido . "</p>";
+                }
+            }
+            /*
         $usuario = $_POST['usuario'];
         $pass = $_POST['contra'];
         $repetircontraseña = $_POST['repcontraseña'];
@@ -28,7 +68,7 @@
         echo "<p style='color:black;'>Usuario: ".$usuario."</p>";
         echo "<p style='color:black;'>Password: ".$pass."</p>";
         echo "<p style='color:black;'>Email: ".$email."</p>";
-
+ */
         ?>
     </section>
     </main>
