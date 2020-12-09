@@ -95,19 +95,19 @@
                 <p><label for="contra" class="invisible">Contraseña:</label>
                 <input type="password" id="contra" name="contra" required placeholder="contraseña"></p>
                 
-                <p><label for="repcontraseña" class="invisible">Nueva Contraseña:</label>
-                <input type="password" id="repcontraseña" name="newcontra" required placeholder="Nueva contraseña"></p>
+                <p><label for="repcontraseña" class="invisible">Repetir Nueva Contraseña:</label>
+                <input type="password" id="repcontraseña" name="repcontraseña" required placeholder="Nueva contraseña"></p>
 
                 <p><label for="passcorrecta" class="invisible">Verificar Contraseña:</label>
                 <input type="password" id="passcorrecta" name="passcorrecta" required placeholder="Verificar contraseña actual"></p>
                 
                 <p><label for="correo" class="invisible">Correo:</label>
                 <?php
-                  echo "<input type='email' name='email' placeholder='$email' required>";
+                  echo "<input type='email' name='correo' placeholder='$email' required>";
                 ?>
                 
                 <p><label for="sexo" class="invisible">Sexo</label>
-                <select name="gender">
+                <select name="sexo">
                             <?php
                             if ($sexo == "1") {
                                 echo "<option value='hombre' selected>Hombre</option><option value='mujer'>Mujer</option><option value='otro'>Otro</option>";
@@ -123,12 +123,12 @@
         
                 <p><label for="fechnac">Fecha de Nacimiento</label>
                 <?php
-                    echo "<input type='date' name='fecha_nacimiento' value='$fecha'>";
+                    echo "<input type='date' name='fechnac' value='$fecha'>";
                     ?></p>
 
-                <label for="estilo" class="invisible">Estilo</label>
+                <label for="Estilo" class="invisible">Estilo</label>
                             <p>
-                                <select name="estilos">
+                                <select name="Estilos">
                                     <?php
                                     if ($estilo == "1") {
                                         echo "<option value='1' selected>Estilo normal</option>";
@@ -189,9 +189,9 @@
                             ?>
 
                         </select></p>
-                <p><label for="ciudad"  class="invisible">Ciudad:</label>
+                <p><label for="Ciudad"  class="invisible">Ciudad:</label>
                 <?php
-                        echo "<input type='text' name='ciudad' placeholder='$ciudad'></label>";
+                        echo "<input type='text' name='Ciudad' placeholder='$ciudad'></label>";
                         ?></p>
         
                 <p><label for="foto">Foto perfil</label>

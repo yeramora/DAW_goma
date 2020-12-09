@@ -14,78 +14,12 @@ include('header.php');
 
 <div id="background-resMisDatos" class="background_parallax">
     <section class="col-4 margin_auto padding20">
-        <br><br>
+
         <?php
         require("conexionBD.php");
-        $datosCorrectos = true;
-
-        $exp_regular = "/^[A-Za-z0-9_-]{4,10}$/";
-        $exp_regular_pass = "/^[A-Za-z0-9_-]{6,13}$/";
-        $exp_regular_ciudad = "/^[a-zA-ZáéíóúÁÉÍÓÚäëïöüÄËÏÖÜàèìòùÀÈÌÒÙ\s]+$/";
-
-        $usuario = $_POST['usuario'];
-        if(!preg_match($exp_regular, $usuario)){
-            header('Location: UserRegister.php?error=user');
-            $datosCorrectos=false;
-        }
-
-      /*  if($_FILES["input_foto"]["type"] != "image/jpg")
-        {
-            header('Location: UserRegister.php?error=img');
-            $datosCorrectos=false;
-        }
-
-        $tmp_name = $_FILES["input_foto"]["tmp_name"];
-        $name_img = basename($_FILES["input_foto"]["name"]);
-        $fichero_subido = $usuario . ".jpg";
-        move_uploaded_file($tmp_name, "img/$fichero_subido"); */
+        include('FiltrarDatos.php');
 
         $old_pass = $_POST['passcorrecta'];
-        $pass = $_POST['contra'];
-        $pass_repeat = $_POST['newcontra'];
-        if(!preg_match($exp_regular_pass, $pass) || !preg_match($exp_regular_pass, $pass_repeat) || !preg_match($exp_regular_pass, $old_pass)){
-            header('Location: UserRegister.php?error=pass');
-            $datosCorrectos=false;
-        }
-
-        $email = $_POST['email'];
-        if(filter_var($email, FILTER_VALIDATE_EMAIL)){
-            header('Location: UserRegister.php?error=email');
-            $datosCorrectos=false;
-        }
-        $ciudad = $_POST['ciudad'];
-        if(!preg_match($exp_regular_ciudad, $ciudad)){
-            header('Location: UserRegister.php?error=ciudad');
-            $datosCorrectos=false;
-        }
-        $pais = $_POST['paises'];
-        $array = array();
-
-        $flag = false;
-        $sql_paises = "SELECT id FROM paises";
-        $paises = $conexion->query($sql_paises);
-        while ($fila = $paises->fetch_assoc()) {
-            $array[] = $fila['id'];
-        }
-        foreach ($array as $valor) {
-            if($valor==$pais){
-                $flag = true;
-            }
-        }
-
-        if(!$flag){
-            header('Location: UserRegister.php?error=pais');
-            $datosCorrectos=false;
-        }
-
-        $sexo = $_POST['gender'];
-        if($sexo!="hombre" && $sexo!="mujer" && $sexo!="otro"){
-            header('Location: UserRegister.php?error=sexo');
-            $datosCorrectos=false;
-        }
-       
-        $fechaN = $_POST['fechnac'];
-
 
         $id = mysqli_real_escape_string($conexion, $_SESSION['sesion']['IdUsuario']);
 
