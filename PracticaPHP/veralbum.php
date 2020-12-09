@@ -1,25 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-  <?php 
-    session_start();
-    if (!isset($_SESSION['sesion'])) {
-        header('Location:'.'index.php');
-    }else{
-        
-        if($_SESSION['sesion']['Estilo'] == "style"){
-            include('meta.php');
-        }else if($_SESSION['sesion']['Estilo'] == "Alto contraste"){
-            include('metaAltContraste.php');
-        }else if($_SESSION['sesion']['Estilo'] == "Contraste y Letras"){
-            include('metaLetrasContraste.php');
-        }else if($_SESSION['sesion']['Estilo'] == "Letras Grandes"){
-            include('metaLetrasGrandes.php');
-        }else if($_SESSION['sesion']['Estilo'] == "Modo Noche"){
-            include('metaModoNoche.php');
-        } 
-    }
-?>
+  <?php
+    include("eleccionEstilo.php");
+    $id_album = mysqli_real_escape_string($conexion, $_GET['album']);
+    ?>
     <title>Memories - Album</title>
   </head>
   <body>
@@ -31,7 +16,10 @@
     
     <a href="misalbumes.php">Ver mis albumes</a> 
     <a href="misfotos.php">Ver mis fotos</a>  
-    <section>
+    <?php
+    echo "<a href='añadirFoto.php?album=$id_album'>Añadir Foto</a>  
+    <section>"
+    ?>
     <?php
     include('veralbumfuncion.php');
 ?>

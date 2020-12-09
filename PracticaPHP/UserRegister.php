@@ -1,25 +1,10 @@
     <!DOCTYPE html>
 <html lang="es">
   <head>
-  <?php 
-    session_start();
-    if (!isset($_SESSION['sesion'])) {
-        header('Location:'.'index.php');
-    }else{
-        
-        if($_SESSION['sesion']['Estilo'] == "style"){
-            include('meta.php');
-        }else if($_SESSION['sesion']['Estilo'] == "Alto contraste"){
-            include('metaAltContraste.php');
-        }else if($_SESSION['sesion']['Estilo'] == "Contraste y Letras"){
-            include('metaLetrasContraste.php');
-        }else if($_SESSION['sesion']['Estilo'] == "Letras Grandes"){
-            include('metaLetrasGrandes.php');
-        }else if($_SESSION['sesion']['Estilo'] == "Modo Noche"){
-            include('metaModoNoche.php');
-        } 
-    }
-?>
+
+  <?php
+    include("eleccionEstilo.php");
+    ?>
     <title>Memories - LOGGED</title>
   </head>
   <body>
@@ -87,6 +72,7 @@
           <a href="añadirfoto.php">Añadir foto</a>
           <a href="crearAlbum.php">Crear album</a>
           <a href="SolicitarAlbum.php">Solicitar&nbsp;album</a> 
+          <a href="configurarestilo.php">Configurar</a>
          <!-- <fieldset class="row">
             <legend>Al pulsar en mis albums</legend>
             <img src="img.png" alt="icono" width="300" height="300">
@@ -98,7 +84,7 @@
           </fieldset> -->
           <fieldset>
             <legend>Al pulsar en mi perfil</legend>
-            <form action="RespRegistroNuevoUser.php" method = "post" class="formyera">
+            <form action="ResDatosUser.php" method = "post" class="formyera">
               <h1>Mis datos</h1>
               
                 <p><label for="usuario" class="invisible">Usuario:</label >
@@ -109,8 +95,11 @@
                 <p><label for="contra" class="invisible">Contraseña:</label>
                 <input type="password" id="contra" name="contra" required placeholder="contraseña"></p>
                 
-                <p><label for="repcontraseña" class="invisible">Repetir Contraseña:</label>
-                <input type="password" id="repcontraseña" name="repcontraseña" required placeholder="repetir contraseña"></p>
+                <p><label for="repcontraseña" class="invisible">Nueva Contraseña:</label>
+                <input type="password" id="repcontraseña" name="newcontra" required placeholder="Nueva contraseña"></p>
+
+                <p><label for="passcorrecta" class="invisible">Verificar Contraseña:</label>
+                <input type="password" id="passcorrecta" name="passcorrecta" required placeholder="Verificar contraseña actual"></p>
                 
                 <p><label for="correo" class="invisible">Correo:</label>
                 <?php

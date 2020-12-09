@@ -9,7 +9,6 @@ if ($conexion->errno) {
 }
 
 while ($fila = $resultados->fetch_assoc()) {
-    //Al hacer el POST enviamos el value ya que al insertar en la BBDD especificaremos el Id del pais y no el nombre
     echo "<option value=" . "'" . $fila['IdEstilo'] . "'>" . $fila['Nombre'] . "</option>";
 
 }

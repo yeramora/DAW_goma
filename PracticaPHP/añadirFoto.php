@@ -20,14 +20,14 @@ include('header.php');
         <h2>Añadir foto a álbum</h2>
         <form action="resSubidaFoto.php" method="post" class="formyera">
             <p><label class="invisible" for="titulo">Título de la foto</label>
-            <input type="text" name="titulo" placeholder="Título de la foto" required></p>
+            <input type="text" name="titulo" placeholder="Título de la foto"></p>
             
             <p><label class="invisible" for="descripcion">Descripción</label>
             <textarea rows="4" cols="80" name="descripcion" placeholder="Descripción"></textarea></p>
             
             <p><label>
                         <label class="label_blanco text_shadow" for="fecha">Fecha</label>
-                        <input type="date" name="fecha" required>
+                        <input type="date" name="fecha">
                 </p>
                 <p><label class="label_blanco text_shadow">País</label>
                     <p class="select">
@@ -38,7 +38,7 @@ include('header.php');
                         </select></p>
             
             <p><label class="invisible  " for="textoAlternativo">Texto alternativo</label>
-            <input type="text" name="textoAlternativo" placeholder="textoAlternativo" required></p>
+            <input type="text" name="textoAlternativo" placeholder="textoAlternativo"></p>
             
             
             <p><label class="label_blanco text_shadow" for="album">Album</label>

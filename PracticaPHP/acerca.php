@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="cssAlex.css" title="Estilo básico" media="screen"> 
     <meta charset="UTF-8">
     <title>Formulario de Busqueda</title>
+    
   </head>
   <body>
     <header>

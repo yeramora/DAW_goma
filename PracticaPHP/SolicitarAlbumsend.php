@@ -1,25 +1,9 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-  <?php 
-    session_start();
-    if (!isset($_SESSION['sesion'])) {
-        header('Location:'.'index.php');
-    }else{
-        
-        if($_SESSION['sesion']['Estilo'] == "style"){
-            include('meta.php');
-        }else if($_SESSION['sesion']['Estilo'] == "Alto contraste"){
-            include('metaAltContraste.php');
-        }else if($_SESSION['sesion']['Estilo'] == "Contraste y Letras"){
-            include('metaLetrasContraste.php');
-        }else if($_SESSION['sesion']['Estilo'] == "Letras Grandes"){
-            include('metaLetrasGrandes.php');
-        }else if($_SESSION['sesion']['Estilo'] == "Modo Noche"){
-            include('metaModoNoche.php');
-        } 
-    }
-?>
+  <?php
+    include("eleccionEstilo.php");
+    ?>
     <title>Memories LOGGED</title>
   </head>
   <body>
@@ -32,8 +16,10 @@
           <img src="descarga.png" alt="fotoalbum">
 
           <?php
+            $album = $_POST['album'];
             $nombre = $_POST['named'];
             $titulo = $_POST['tituloa'];
+            $email = $_POST['email'];
             $extra = $_POST['texta'];
             $colortot = $_POST['colora'];
             $color = $_POST['coloralbum'];
@@ -42,6 +28,8 @@
             $calle=$_POST['calle'];
             $numero=$_POST['numberdirect'];
             $loc=$_POST['localidad'];
+            $fecha=$_POST['fechrec'];
+            $coloral=$_POST['coloralbum'];            
 
 
             $numero_paginas = 20;
@@ -75,7 +63,9 @@
 
             $precio_total = $precio_fotos + $precio_paginas;
             $precio_total = $precio_total * $copias;
-
+            $sql = "INSERT INTO solicitudes(IdSolicitud,Album,Nombre,Titulo,Descripcion,Email,Direccion,Color,Copias,Resolucion,Fecha,IColor,FRegistro,Coste) VALUES('NULL','$album','$nombre','$titulo','$extra','$email','$calle+$numero+$loc','$color','$copias','$resolucion','$fecha','$coloral','null','$precio_total')";
+            if($conexion->query($sql)){
+            
             echo "<p>Nombre: ".$nombre."</p>";
             echo "<p>Título: ".$titulo."</p>";
             echo "<p>Texto adicional: ".$extra."</p>";
@@ -89,9 +79,10 @@
                 echo "<p  style='background-color:".$colortot.";'>Color elegido:".$colortot."</p>";
             }
             echo "<p> Será enviado a ".$loc." Calle ".$calle." numero ".$numero."</p>";
+          }
         ?>
           
-          <p class="enviar"><button>Aceptar</button> <a href="index_logged.php"></a> </p>
+          <p class="enviar"><a href="UserRegister.php">Aceptar</a> </p>
         
         </article>
 

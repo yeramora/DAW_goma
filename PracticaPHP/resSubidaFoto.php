@@ -19,10 +19,10 @@ include('header.php');
         <?php
         //error_reporting(0);
         	include("conexionBD.php");
-            $tmp_name = $_FILES["input_foto"]["tmp_name"]; //ERROR FUTURO como no pilla el input no se sube bien a la bbdd
-            $name_img = basename($_FILES["input_foto"]["name"]);
-            $fichero_subido = $name_img . ".jpg";
-            move_uploaded_file($tmp_name, "img/$fichero_subido");
+            //$tmp_name = $_FILES["input_foto"]["tmp_name"]; //ERROR FUTURO como no pilla el input no se sube bien a la bbdd
+            //$name_img = basename($_FILES["input_foto"]["name"]);
+            //$fichero_subido = $name_img . ".jpg";
+            //move_uploaded_file($tmp_name, "img/$fichero_subido");
 
 
         	$fecha = date("Y-m-d", strtotime($_POST['fecha']));
@@ -33,7 +33,33 @@ include('header.php');
 	        $album = mysqli_escape_string($conexion,$_POST['album']);
 	        $textoAlternativo = mysqli_escape_string($conexion,$_POST['textoAlternativo']);
 	        $fregistro = date('Y-m-d H:i:s');
+            $datosCorrectos = true;
 
+            $fototext = substr($textoAlternativo, 0, 3);  // devuelve "foto"
+            $imagentext = substr($textoAlternativo, 0, 5);  // devuelve "imagen"
+
+            if($fototext == "foto"){
+                $datosCorrectos = false;
+            }
+
+            if (!isset($titulo)){
+                $datosCorrectos = false;
+            }
+            if($imagentext == "imagen"){
+                $datosCorrectos = false;
+            }
+
+            $textolength= strlen($textoAlternativo);
+
+            if($textolength < 10){
+                $datosCorrectos = false;
+            }
+
+	        $sql = "INSERT INTO fotos(IdFoto,Titulo,Descripcion,Fecha,Pais,Album,Fichero,Alternativo,FRegistro) VALUES('NULL','$titulo','$descripcion','$fecha','$pais','$album',' i1.jpeg','$textoAlternativo','$fregistro')";
+	        if($datosCorrectos == true && $conexion->query($sql)){
+                echo "<h2> Introducida con éxito</h2>";
+                
+                
 	        echo "<p><h3>Titulo: </h3>" . $titulo . "</p>";
             echo "<p><h3>Descripcion: </h3>" . $descripcion . "</p>";
             echo "<p><h3>Fecha: </h3>" . $fecha . "</p>";
@@ -43,14 +69,18 @@ include('header.php');
             echo "<p><h3>Fecha: </h3>" . $fecha . "</p>";
             echo "<p><h3>Fecha Registro: </h3>" . $fregistro . "</p>";
 
+           //echo "<p><img src='$fichero_subido'></img></p>";
+	        }else{
+                echo "<h2> Algo ha fallado</h2>";
 
-	        $sql = "INSERT INTO fotos(IdFoto,Titulo,Descripcion,Fecha,Pais,Album,Fichero,Alternativo,FRegistro) VALUES('NULL','$titulo','$descripcion','$fecha','$pais','$album',' $fichero_subido','$textoAlternativo','$fregistro')";
+                echo "<p>Comprueba que el texto alternativo no contenga palabras reduntantes como IMAGEN o FOTO al principio o mire si es menor a 10 caracteres o que haya puesto un titulo a la foto</p>";
 
-	        if($conexion->query($sql)){
-	        	echo "<h2 class='white text_shadow'> Introducida con éxito</h3>";
-	        }
+                echo "<article id='infouser'>";
+                echo "<a href='añadirFoto.php'>Aceptar</a>";
+                echo " </article>";
+            }
 
-            echo "<p><img src='$fichero_subido'></img></p>";
+            
 
         
 

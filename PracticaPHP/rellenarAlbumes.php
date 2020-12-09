@@ -3,7 +3,7 @@
 include("conexionBD.php");
 //session_start();
 $IdUsuario = mysqli_real_escape_string($conexion, $_SESSION['sesion']['IdUsuario']);
-
+$id_album = mysqli_real_escape_string($conexion, $_GET['album']);
 //TODO aun no se si hay que insertar usuarios por eso no se que poner en el where
 $sql = "SELECT * from ALBUMES where Usuario='$IdUsuario'";
 $resultados = $conexion->query($sql);
@@ -14,6 +14,11 @@ if ($conexion->errno) {
 
 while ($fila = $resultados->fetch_assoc()) {
     //Al hacer el POST enviamos el value ya que al insertar en la BBDD especificaremos el Id del pais y no el nombre
-    echo "<option value=" . "'" . $fila['IdAlbum'] . "'>" . $fila['Titulo'] . "</option>";
+    if($fila['IdAlbum'] != $id_album){
+        echo "<option value=" . "'" . $fila['IdAlbum'] . "'>" . $fila['Titulo'] . "</option>";
+    }else{
+        echo "<option value=" . "'" . $fila['IdAlbum'] . "'selected=''>" . $fila['Titulo'] . "</option>";
+    }
+    
 
 }
