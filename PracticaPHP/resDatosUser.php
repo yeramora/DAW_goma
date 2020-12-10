@@ -21,13 +21,19 @@ include('header.php');
 
         $old_pass = $_POST['passcorrecta'];
 
+        $salted = "32298u2fjhkjsdvnfskhvsiudh2u3894234sdfjvds". $old_pass."2349F09WUFjjfjF0WJFGOJFOIW";
+
+$hashed = hash('sha512', $salted);
+
+$hasedcut = substr($hashed, 0, 14);
+
         $id = mysqli_real_escape_string($conexion, $_SESSION['sesion']['IdUsuario']);
 
         $sql = "SELECT contra FROM usuarios WHERE IdUsuario = $id;";
         $result_pass = $conexion->query($sql);
         $result_fetch_pass = $result_pass->fetch_assoc();
 
-        if($result_fetch_pass['contra'] == $old_pass){
+        if($result_fetch_pass['contra'] == $hasedcut){
             if ($pass != $pass_repeat) {
                 header('Location: UserRegister.php?error=pass_repeat');
                 $datosCorrectos=false;
@@ -71,7 +77,7 @@ include('header.php');
                 }
             }
         }else{
-            header('Location: UserRegister.php?error=old_tuputamadre');
+            header('Location: UserRegister.php?error=error');
         }
         ?>
         <br><br>

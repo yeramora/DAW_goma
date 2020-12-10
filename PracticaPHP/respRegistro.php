@@ -40,16 +40,17 @@
               
               include("FiltrarDatos.php");
               if($datosCorrectos){
+                
                 $salted = "32298u2fjhkjsdvnfskhvsiudh2u3894234sdfjvds".$esc_pass."2349F09WUFjjfjF0WJFGOJFOIW";
 
                 $hashed = hash('sha512', $salted);
+                
                 $sql = "INSERT INTO usuarios (usuario, contra, correo, sexo, fechnac, Ciudad, Pais, Foto,FRegistro, Estilo)
                 VALUES ('$esc_usuario', ' $hashed', '$esc_email', '$esc_sexo', '$esc_fechaN', '$esc_ciudad', '$esc_pais', '$fichero_subido', '$esc_fechaR', '$esc_estilo')";
                 }
                 if($conexion->query($sql) === TRUE){
                   echo "<h2>Registro Satisfactorio</h2>";
                 echo "<p style='color:white;'>Usuario: " . $usuario . "</p>";
-                echo "<p style='color:white;'>Usuario: " . $hashed . "</p>";
                 echo "<p style='color:white;'>Email: " . $email . "</p>";
                 echo "<p style='color:white;'>Ciudad: " . $ciudad . "</p>";
                 echo "<p style='color:white;'>Pais: " . $pais . "</p>";
