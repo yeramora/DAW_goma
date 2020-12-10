@@ -23,11 +23,11 @@
         $id_album = mysqli_real_escape_string($conexion, $fila['IdAlbum']);
         $titulo_album = $fila['Titulo'];
         $descrip_album = $fila['Descripcion'];
-        if ($par == 0) {
+      
             echo "<section class=\"info1\">
                 <a class='info-link' href='verAlbum.php?album=$id_album'> <h2>$titulo_album</h2></a>
                 <p>$descrip_album</p></section>";
-        }
+        
         $sql = "SELECT * FROM FOTOS WHERE Album='$id_album' limit 3";
         $rest_fotos_albumes = $conexion->query($sql);
         while ($row = mysqli_fetch_assoc($rest_fotos_albumes)) {
@@ -41,11 +41,7 @@
             }
             $flag++;
         }
-        if ($par % 2 == 0) {
-            echo "<section class=\"info2\">
-                <a href='verAlbum.php?album=$id_album'> <h2>$titulo_album</h2></a>
-                <p>$descrip_album</p></section>";
-        }
+        
         $par++;
     }
     ?>

@@ -200,7 +200,7 @@
                 <p class="enviar"><input type="submit" id="enviar" name="enviar">
                 <input type="reset" id="borrar" name="Borrar"></p>
             </form>
-            <p><button value="borrar cuenta">Borrar cuenta</button><a href="SolicitarAlbumsend.php"></a></p>
+            <a href="DarmeBaja.php" style='text-decoration:none;'><h2>Borrar cuenta<h2></a>
           </fieldset>
 
          

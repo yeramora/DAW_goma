@@ -255,9 +255,7 @@ p>select{
   -webkit-text-fill-color: transparent;
 }
 
-#infogeneral>section>p{
 
-}
 
 #infouser>button{
   width:30%;
@@ -269,6 +267,15 @@ p>select{
   color:white;
   background:linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
   margin:0 3em 0 3em;
+}
+
+.links {
+  text-decoration: none;
+  text-transform: uppercase;
+  background:linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin:3em;
 }
 
 #infouser>a{

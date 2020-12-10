@@ -29,10 +29,10 @@ include('header.php');
 
         include("conexionBD.php");
 
-        $sql = "INSERT INTO ALBUMES(IdAlbum,Titulo,Descripcion,Usuario) VALUES ('NULL','$titulo','$descripcion','$usuario')";
+        $sql = "INSERT INTO ALBUMES(Titulo,Descripcion,Usuario) VALUES ('$titulo','$descripcion','$usuario')";
 
         if ($conexion->query($sql) === TRUE) {
-            echo "Introducido";
+            echo "<a href='añadirfoto.php?album=$titulo'>Añade fotos a tu Album! </a>";
         }
 
 
