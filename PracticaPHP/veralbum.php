@@ -17,7 +17,7 @@
     <a href="misalbumes.php">Ver mis albumes</a> 
     <a href="misfotos.php">Ver mis fotos</a>  
     <?php
-    echo "<a href='añadirFoto.php?IDalbum=$id_album'>Añadir Foto</a>  
+    echo "<a href='añadirFoto.php?album=$id_album'>Añadir Foto</a>  
     <section>"
     ?>
     <?php

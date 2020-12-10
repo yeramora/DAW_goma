@@ -5,8 +5,10 @@ require("conexionBD.php");
 $username = mysqli_real_escape_string($conexion, $_POST['username']);
 $password = mysqli_real_escape_string($conexion, $_POST['password']);
 $recordar = "";
+$salted = "32298u2fjhkjsdvnfskhvsiudh2u3894234sdfjvds".$password."2349F09WUFjjfjF0WJFGOJFOIW";
+$hashed = hash('sha512', $salted);
 
-$sql = "SELECT * FROM USUARIOS WHERE usuario='$username' and contra='$password'";
+$sql = "SELECT * FROM USUARIOS WHERE usuario='$username' and contra='$hashed'";
 $resultados = $conexion->query($sql);
 
 if ($resultados->num_rows > 0) {
