@@ -14,13 +14,12 @@ if ($conexion->errno) {
 
 while ($fila = $resultados->fetch_assoc()) {
     //Al hacer el POST enviamos el value ya que al insertar en la BBDD especificaremos el Id del pais y no el nombre
-    
     if (isset($_GET['album'])) {
-        if($fila['IdAlbum'] != $id_album){
-            if($fila['Titulo']==$_GET['album']){
+            if($fila['IdAlbum']==$_GET['album']){
+                echo "entro 1";
                 echo "<option value=" . "'" . $fila['IdAlbum'] . "'>" . $fila['Titulo'] . "</option>";
             }  
-        }
+       
       }
       else{
         if($fila['IdAlbum'] != $id_album){

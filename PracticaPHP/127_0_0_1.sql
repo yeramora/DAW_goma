@@ -937,3 +937,13 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+ALTER TABLE usuarios CHANGE IdUsuario IdUsuario INT(10)AUTO_INCREMENT PRIMARY KEY;
+DELETE FROM usuarios WHERE IdUsuario != 23232323;
+
+INSERT INTO `usuarios` (`IdUsuario`, `usuario`, `contra`, `correo`, `sexo`, `fechnac`, `Ciudad`, `Pais`, `Foto`, `FRegistro`, `Estilo`) VALUES
+(0, 'usuario0', ' 4a4ca2aa4da945', 'usuario0@gmail.com', 0, '2018-07-22', 'Alicante', 73, 'usuario0.jpg', '00:20:20', 5),
+(1, 'usuario1', ' 6c0eaa550f2762', 'usuario1@gmail.com', 0, '2018-07-22', 'Alicante', 73, 'usuario1.jpg', '00:20:20', 5),
+(2, 'usuario2', ' 68838709d097d0', 'usuario2@gmail.com', 0, '2018-07-22', 'Alicante', 62, 'usuario2.jpg', '00:20:20', 5),
+(19, 'usuario3', ' 6f4038c7d61194', 'usuario3@gmail.com', 0, '2018-06-26', 'Alicante', 3, 'usuario3.jpg', '00:20:20', 4),
+(20, 'usuario3', ' 6f4038c7d61194', 'usuario3@gmail.com', 0, '2018-06-26', 'Alicante', 3, 'usuario3.jpg', '00:20:20', 4);
+
