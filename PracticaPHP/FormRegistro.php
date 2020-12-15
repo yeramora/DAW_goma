@@ -25,7 +25,7 @@
             ?>
         </h2>
         
-      <form name="registroform" action="respRegistro.php" method= "post" class="formyera"  >
+      <form name="registroform" action="respRegistro.php" method= "post" class="formyera" enctype="multipart/form-data">
         <h1>Registro</h1>
           <p><label for="usuario" class="invisible">Usuario:</label>
           <input type="text" id="usuario" name="usuario" placeholder="Usuario"/></p>
@@ -42,9 +42,9 @@
           <p><label for="sexo" class="invisible">Sexo</label>
           <select id="sexo" name="sexo" >
             <option value="">Sexo</option>
-            <option value="hombre">Hombre</option>
-            <option value="mujer">Mujer</option>
-            <option value="otro">Otro</option>
+            <option value="1">Hombre</option>
+            <option value="2">Mujer</option>
+            <option value="3">Otro</option>
           </select></p>
 
           <p><label class="label_blanco text_shadow">Estilo</label>
@@ -71,7 +71,7 @@
           <input type="text" id="Ciudad" name="Ciudad"  placeholder="ciudad"></p>
   
           <p><label for="Foto">Foto perfil</label>
-          <input type="file" name="Foto" id="Foto"  multiple="multiple"></p>
+          <input type="file" name="input_foto" id="input_foto"></p>
           
           <p class="enviar"><input type="submit" id="enviar" name="enviar">
           <input type="reset" id="borrar" name="Borrar"></p>

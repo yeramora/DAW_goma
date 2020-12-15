@@ -13,6 +13,11 @@
     <main>
     <section class="col-4 margin_auto padding20">
         <?php
+        include("conexionBD.php");
+        $tmp_name = $_FILES["input_foto"]["tmp_name"]; //ERROR FUTURO como no pilla el input no se sube bien a la bbdd
+        $name_img = basename($_FILES["input_foto"]["name"]);
+        $fichero_subido = $name_img;
+        move_uploaded_file($tmp_name, "img/$fichero_subido");
 
             if (isset($_GET['error'])) {
 

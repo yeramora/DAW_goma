@@ -18,7 +18,7 @@ include('header.php');
 <main>
     <section>
         <h2>Añadir foto a álbum</h2>
-        <form action="resSubidaFoto.php" method="post" class="formyera">
+        <form action="resSubidaFoto.php" method="post" class="formyera" enctype="multipart/form-data"> 
             <p><label class="invisible" for="titulo">Título de la foto</label>
             <input type="text" name="titulo" placeholder="Título de la foto"></p>
             
@@ -50,7 +50,7 @@ include('header.php');
             
             <label id="add-computer-button" for="fileupload" class="upload_file_btn">Sube tu foto
             </label>
-            <input id="fileupload" required type="file" multiple="multiple" name="input_foto" accept="image/jpeg">
+            <input id="input_foto" required type="file" name="input_foto" accept="image/jpeg">
             <button type="submit" style="cursor:pointer;">Añadir foto</button>
         </form>
     </section>

@@ -32,7 +32,7 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
 }
 
 $sexo = $_POST['sexo'];
-if ($sexo != "hombre" && $sexo !="mujer" && $sexo != "otro") {
+if ($sexo != "1" && $sexo !="2" && $sexo != "3") {
     header('Location: respRegistro.php?error=sexo');
     $datosCorrectos = false;
 }
@@ -47,7 +47,6 @@ if($fechaN>$hasta){
 
 //$tmp_name = $_FILES["Foto"]["tmp_name"];
 //$name_img = basename($_FILES["Foto"]["name"]);
-$fichero_subido = $usuario . ".jpg";
 $ciudad = $_POST['Ciudad'];
 $pais = $_POST['paises'];
 $estilo = $_POST['Estilo'];

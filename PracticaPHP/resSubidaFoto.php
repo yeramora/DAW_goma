@@ -19,10 +19,10 @@ include('header.php');
         <?php
         //error_reporting(0);
         	include("conexionBD.php");
-            //$tmp_name = $_FILES["input_foto"]["tmp_name"]; //ERROR FUTURO como no pilla el input no se sube bien a la bbdd
-            //$name_img = basename($_FILES["input_foto"]["name"]);
-            //$fichero_subido = $name_img . ".jpg";
-            //move_uploaded_file($tmp_name, "img/$fichero_subido");
+            $tmp_name = $_FILES["input_foto"]["tmp_name"]; //ERROR FUTURO como no pilla el input no se sube bien a la bbdd
+            $name_img = basename($_FILES["input_foto"]["name"]);
+            $fichero_subido = $name_img;
+            move_uploaded_file($tmp_name, "img/$fichero_subido");
 
 
         	$fecha = date("Y-m-d", strtotime($_POST['fecha']));
@@ -55,7 +55,7 @@ include('header.php');
                 $datosCorrectos = false;
             }
 
-	        $sql = "INSERT INTO fotos(IdFoto,Titulo,Descripcion,Fecha,Pais,Album,Fichero,Alternativo,FRegistro) VALUES('NULL','$titulo','$descripcion','$fecha','$pais','$album',' i1.jpeg','$textoAlternativo','$fregistro')";
+	        $sql = "INSERT INTO fotos(IdFoto,Titulo,Descripcion,Fecha,Pais,Album,Fichero,Alternativo,FRegistro) VALUES('NULL','$titulo','$descripcion','$fecha','$pais','$album','$fichero_subido','$textoAlternativo','$fregistro')";
 	        if($datosCorrectos == true && $conexion->query($sql)){
                 echo "<h2> Introducida con éxito</h2>";
                 
@@ -69,7 +69,7 @@ include('header.php');
             echo "<p><h3>Fecha: </h3>" . $fecha . "</p>";
             echo "<p><h3>Fecha Registro: </h3>" . $fregistro . "</p>";
 
-           //echo "<p><img src='$fichero_subido'></img></p>";
+           echo "<p><img src='img/$fichero_subido'></img></p>";
 	        }else{
                 echo "<h2> Algo ha fallado</h2>";
 

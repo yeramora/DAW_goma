@@ -84,7 +84,7 @@
           </fieldset> -->
           <fieldset>
             <legend>Al pulsar en mi perfil</legend>
-            <form action="ResDatosUser.php" method = "post" class="formyera">
+            <form action="ResDatosUser.php" method = "post" class="formyera" enctype="multipart/form-data">
               <h1>Mis datos</h1>
               
                 <p><label for="usuario" class="invisible">Usuario:</label >
@@ -110,13 +110,13 @@
                 <select name="sexo">
                             <?php
                             if ($sexo == "1") {
-                                echo "<option value='hombre' selected>Hombre</option><option value='mujer'>Mujer</option><option value='otro'>Otro</option>";
+                                echo "<option value='1' selected>Hombre</option><option value='2'>Mujer</option><option value='3'>Otro</option>";
                             }
-                            if ($sexo == "2") {
-                                echo "<option value='hombre'>Hombre</option><option value='mujer' selected>Mujer</option><option value='otro'>Otro</option>";
+                            if($sexo == "2") {
+                                echo "<option value='1'>Hombre</option><option value='2' selected>Mujer</option><option value='3'>Otro</option>";
                             }
                             if ($sexo == "3") {
-                                echo "<option value='hombre'>Hombre</option><option value='mujer'>Mujer</option><option value='otro' selected>Otro</option>";
+                                echo "<option value='1'>Hombre</option><option value='2'>Mujer</option><option value='3' selected>Otro</option>";
                             }
                             ?>
                 </select></p>
@@ -128,7 +128,7 @@
 
                 <label for="Estilo" class="invisible">Estilo</label>
                             <p>
-                                <select name="Estilos">
+                                <select name="Estilo">
                                     <?php
                                     if ($estilo == "1") {
                                         echo "<option value='1' selected>Estilo normal</option>";
@@ -195,7 +195,7 @@
                         ?></p>
         
                 <p><label for="foto">Foto perfil</label>
-                <input type="file" name="foto" id="foto" required></p>
+                <input type="file" name="input_foto" id="foto"></p>
                 
                 <p class="enviar"><input type="submit" id="enviar" name="enviar">
                 <input type="reset" id="borrar" name="Borrar"></p>

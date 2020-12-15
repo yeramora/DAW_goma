@@ -18,6 +18,15 @@ include('header.php');
         <?php
         require("conexionBD.php");
         include('FiltrarDatos.php');
+        if(!isset($_FILES["input_foto"]["tmp_name"])){
+            $tmp_name = $_FILES["input_foto"]["tmp_name"]; //ERROR FUTURO como no pilla el input no se sube bien a la bbdd
+            $name_img = basename($_FILES["input_foto"]["name"]);
+            $fichero_subido = $name_img;
+            move_uploaded_file($tmp_name, "img/$fichero_subido");
+        }else{
+            $fichero_subido = "anonymus.jpeg";
+        }
+            
 
         $old_pass = $_POST['passcorrecta'];
 
@@ -32,8 +41,9 @@ $hasedcut = substr($hashed, 0, 14);
         $sql = "SELECT contra FROM usuarios WHERE IdUsuario = $id;";
         $result_pass = $conexion->query($sql);
         $result_fetch_pass = $result_pass->fetch_assoc();
-
-        if($result_fetch_pass['contra'] == $hasedcut){
+        $newcontra =substr($result_fetch_pass['contra'], 0, 14);
+        //if($result_fetch_pass['contra'] == $hasedcut){
+        if($newcontra == $hasedcut){
             if ($pass != $pass_repeat) {
                 header('Location: UserRegister.php?error=pass_repeat');
                 $datosCorrectos=false;
@@ -47,10 +57,12 @@ $hasedcut = substr($hashed, 0, 14);
                 $esc_sexo = mysqli_real_escape_string($conexion, $sexo);
                 $esc_estilo = mysqli_real_escape_string($conexion, $estilo);
                 $esc_fechaN = mysqli_real_escape_string($conexion, $fechaN);
+                $salted = "32298u2fjhkjsdvnfskhvsiudh2u3894234sdfjvds".$esc_pass."2349F09WUFjjfjF0WJFGOJFOIW";
 
+                $hashed = hash('sha512', $salted);
                 $sql = "UPDATE usuarios
                 SET usuario = '$esc_usuario',
-                    contra = '$esc_pass',
+                    contra = '$hashed',
                     correo = '$esc_email',
                     sexo = '$esc_sexo',
                     fechnac = '$esc_fechaN',
@@ -77,7 +89,7 @@ $hasedcut = substr($hashed, 0, 14);
                 }
             }
         }else{
-            header('Location: UserRegister.php?error=error');
+            header('Location: UserRegister.php?error=error'.$newcontra.'+'.$hasedcut);
         }
         ?>
         <br><br>

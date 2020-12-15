@@ -45,6 +45,51 @@
         ?>  
           </section>
         </article>
+        <section>
+    <br>
+    <h2 class="white">Fotos Seleccionadas</h2>
+    <div class="container col-11 margin_auto">
+        <?php
+        require("conexionBD.php");
+        $lineas = file('fotos_seleccionadas.txt');
+       
+        $array_lineas = array();
+        foreach ($lineas as $num_linea => $linea) {
+            array_push($array_lineas, $linea);
+        }
+        $indices = range(0, 5);
+        shuffle($indices);
+
+        foreach ($indices as $indice) {
+
+            $claves = preg_split("/_/", "$array_lineas[$indice]");
+
+            $sql = "SELECT * FROM FOTOS WHERE IdFoto='$claves[0]'";
+            $resultados = $conexion->query($sql);
+
+            if ($conexion->errno) {
+                echo "Problemas al establecer conexion";
+            }
+
+            $fila = $resultados->fetch_assoc();
+                $id = $fila['IdFoto'];
+                $fichero = $fila['Fichero'];
+                $titulo = $fila['Titulo'];
+                $descripcion = $fila['Descripcion'];
+                $paisBuscar = mysqli_real_escape_string($conexion, $fila['Pais']);
+                $sqlPais = "SELECT * FROM PAISES WHERE id = '$paisBuscar'";
+                $pais = $conexion->query($sqlPais);
+                $fecha = $fila['FRegistro'];
+                $paisNom = $pais->fetch_assoc();
+                $paisNom2 = $paisNom['nombre'];
+
+                echo "<a class='link_photo' href='FotoDetalle.php?id=$id'><div class='box_photo'><div class=\"foto\" style=\"background-image: url('img/$fichero');\"><div class=\"text_photo\"><h2>$titulo</h2><div class='info_foto'><p>Seleccionado por $claves[1]</p><p style='margin-bottom: 0;margin-top: -10px'>Comentario: $claves[2]</p></div><br><div class='info_foto'>$paisNom2, $fecha</div></div></div></div></a>";
+
+        }
+        ?>
+
+    </div>
+</section>
         <article id="busquedalogin">
           <h1>Busqueda</h1>
           <a href="ResBusqueda.php"><i class="fa fa-search" aria-hidden="true"></i></a>
