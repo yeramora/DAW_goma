@@ -10,13 +10,13 @@ $salted = "32298u2fjhkjsdvnfskhvsiudh2u3894234sdfjvds".$password."2349F09WUFjjfj
 
 $hashed = hash('sha512', $salted);
 
-$hasedcut = substr($hashed, 0, 14);
+$hasedcut = substr($hashed, 0, 15);
 $sql = "SELECT * FROM USUARIOS WHERE usuario='$username'";
 $resultados = $conexion->query($sql);
 
 if ($resultados->num_rows > 0) {
 	$datosUsu = $resultados->fetch_all(MYSQLI_ASSOC);
-	if(" ".$hasedcut==$datosUsu[0]['contra']){
+	if($hasedcut==$datosUsu[0]['contra']){
 		$eleccion = $datosUsu[0]['Estilo'];
 
 		if($eleccion==1){
@@ -61,7 +61,7 @@ if ($resultados->num_rows > 0) {
 		}
 		header('Location: index_logged.php');
 	}else{
-	header('Location: index.php?error');
+	header('Location: index.php?'.$datosUsu[0]['contra'].'///'.$hasedcut);
 	}
 	
 }else{

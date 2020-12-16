@@ -11,13 +11,9 @@
     include('headersinlogear.php');
     ?>
     <main>
-    <section class="col-4 margin_auto padding20">
+    <section class="formyera">
         <?php
         include("conexionBD.php");
-        $tmp_name = $_FILES["input_foto"]["tmp_name"]; //ERROR FUTURO como no pilla el input no se sube bien a la bbdd
-        $name_img = basename($_FILES["input_foto"]["name"]);
-        $fichero_subido = $name_img;
-        move_uploaded_file($tmp_name, "img/$fichero_subido");
 
             if (isset($_GET['error'])) {
 
@@ -45,6 +41,13 @@
               
               include("FiltrarDatos.php");
               if($datosCorrectos){
+                $tmp_name = $_FILES["input_foto"]["tmp_name"]; //ERROR FUTURO como no pilla el input no se sube bien a la bbdd
+                $name_img = basename($_FILES["input_foto"]["name"]);
+                $sql_count = "SELECT count(*) FROM usuarios";
+                    $foto_count = $conexion->query($sql_count);
+                    $foto_count_fetch = $foto_count->fetch_assoc();
+                    $fichero_subido = $foto_count_fetch['count(*)']+1. $esc_usuario .$name_img ;
+                    move_uploaded_file($tmp_name, "img/$fichero_subido");
                 
                 $salted = "32298u2fjhkjsdvnfskhvsiudh2u3894234sdfjvds".$esc_pass."2349F09WUFjjfjF0WJFGOJFOIW";
 
@@ -55,14 +58,14 @@
                 }
                 if($conexion->query($sql) === TRUE){
                   echo "<h2>Registro Satisfactorio</h2>";
-                echo "<p style='color:white;'>Usuario: " . $usuario . "</p>";
-                echo "<p style='color:white;'>Email: " . $email . "</p>";
-                echo "<p style='color:white;'>Ciudad: " . $ciudad . "</p>";
-                echo "<p style='color:white;'>Pais: " . $pais . "</p>";
-                echo "<p style='color:white;'>Sexo: " . $sexo . "</p>";
-                echo "<p style='color:white;'>Estilo: " . $estilo . "</p>";
-                echo "<p style='color:white;'>Fecha: " . $fechaN . "</p>";
-                echo "<p style='color:white;'>Foto: " . $fichero_subido . "</p>";
+                echo "<p >Usuario: " . $usuario . "</p>";
+                echo "<p>Email: " . $email . "</p>";
+                echo "<p>Ciudad: " . $ciudad . "</p>";
+                echo "<p>Pais: " . $pais . "</p>";
+                echo "<p>Sexo: " . $sexo . "</p>";
+                echo "<p>Estilo: " . $estilo . "</p>";
+                echo "<p>Fecha: " . $fechaN . "</p>";
+                echo "<p><img src='img/$fichero_subido' height='300' width='300'></img></p>";
                 }
             }
             /*

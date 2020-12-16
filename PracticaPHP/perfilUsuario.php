@@ -48,7 +48,7 @@
       <?php
       $newdate = date("d-m-Y", strtotime($fechaincorporacion));
                 echo "<h2>Perfil de ' $nombre'</h2>
-                  <img src='$imagen' alt='icono' width='300' height='300'>
+                  <img src='img/$imagen' alt='icono' width='300' height='300'>
                   
                   <p><b>Usuario desde: </b>'$newdate'</p>
 
