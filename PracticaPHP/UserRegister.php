@@ -39,7 +39,31 @@
                   $newdate = date("d-m-Y", strtotime($registro));
                   echo "<p>Te uniste el $newdate </p>";
                 ?>
+                <form method="post" class="formyera">
+          <input type="submit" name="eliminarfoto" id="eliminarfoto" value="EliminarFotoPerfil" /><br/>
+          </form>
+
+          <?php
+
+            function eliminarfoto()
+            {
+              require("conexionBD.php");
+              $id = mysqli_real_escape_string($conexion, $_SESSION['sesion']['IdUsuario']);
+              $sql = "UPDATE usuarios
+              SET Foto = 'anonymus.jpeg'
+              WHERE IdUsuario = '$id'";
+
+            if ($conexion->query($sql) === TRUE) {
+
+            }
+          }
+
+            if(array_key_exists('eliminarfoto',$_POST)){
+              eliminarfoto();
+            }
+            ?>
           </section>
+          
           <p class="white text_shadow" style="font-size: .7em;"> Última conexión: 
                 <?php 
 

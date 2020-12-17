@@ -46,7 +46,7 @@
                 $sql_count = "SELECT count(*) FROM usuarios";
                     $foto_count = $conexion->query($sql_count);
                     $foto_count_fetch = $foto_count->fetch_assoc();
-                    $fichero_subido = $foto_count_fetch['count(*)']+1. $esc_usuario .$name_img ;
+                    $fichero_subido = $foto_count_fetch['count(*)']+1 . $usuario . $name_img ;
                     move_uploaded_file($tmp_name, "img/$fichero_subido");
                 
                 $salted = "32298u2fjhkjsdvnfskhvsiudh2u3894234sdfjvds".$esc_pass."2349F09WUFjjfjF0WJFGOJFOIW";

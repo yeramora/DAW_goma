@@ -13,8 +13,16 @@
         shuffle($indices);
         $contador=0;
         foreach ($indices as $indice) {
-            if( $contador<5){
-              $claves = preg_split("/_/", "$array_lineas[$indice]");
+
+          /*
+8_XxJuananxX_comentario8
+9_Lupita_comentario9
+10_RamonYCajal_comentario10
+
+pa probar
+          */
+            if( $contador<1){
+              $claves = preg_split("/#/", "$array_lineas[$indice]");
 
               $sql = "SELECT * FROM FOTOS WHERE IdFoto='$claves[0]'";
               $resultados = $conexion->query($sql);
@@ -69,4 +77,17 @@
         echo "<h3>Dificultad:</h3> <p>$dif</p>";
         echo "<h3>El truco:</h3> <p>$con</p>";
         echo "</section></article>";
+
+        /*  
+        pa probar modificacion
+
+        {
+    "Categoria":"Ajustes 123",
+    "Dificultad":"Difici2312313l",
+    "Consejo":"Consejo numero 4 todo bien bonito perfecto"
+  }
+        
+        
+        
+        */
         ?>
